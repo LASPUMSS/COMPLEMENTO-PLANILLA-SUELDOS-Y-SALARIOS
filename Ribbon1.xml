@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab id="PlanillaSueldosSalarios" label="Planilla Sueldos Y Salaris Bolivia">
+        <group id="GPSS" label="My Group">
+			<button onAction="btn_GenerarHojaPrincipalDatos" id="btn_GenerarHojaPrincipalDatos" label="Generar Hoja Principal" imageMso="NewDistributionList" size="large"/>
+			<button id="btn_AgregarDatosGenerales" label="Datos Generales" imageMso="GroupCaptions" size="normal"/>
+			<button id="btn_AgregarDatosEspecificos" label="Datos Especificos" imageMso="TableListPermissions" size="normal"/>
+			<button id="btn_AgregarTrabajador" label="Agregar Trabajador" imageMso="AddOrRemoveAttendees" size="normal"/>
+			<button id="btn_GenerarPlanillaSueldosSalarios" label="Generar Planilla" imageMso="RecordsRefreshMenu" size="normal"/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
+
