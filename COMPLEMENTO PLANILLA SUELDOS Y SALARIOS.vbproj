@@ -211,6 +211,12 @@
     <Compile Include="UF_DATOS_GENERALES.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="UF_DATOS_ESPECIFICOS_AGREGAR.resx">
+      <DependentUpon>UF_DATOS_ESPECIFICOS_AGREGAR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UF_DATOS_ESPECIFICOS_MODIFICAR.resx">
+      <DependentUpon>UF_DATOS_ESPECIFICOS_MODIFICAR.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UF_DATOS_GENERALES.resx">
       <DependentUpon>UF_DATOS_GENERALES.vb</DependentUpon>
     </EmbeddedResource>

@@ -36,13 +36,13 @@ Partial Class UF_DATOS_GENERALES
         Me.txt_NIT = New System.Windows.Forms.TextBox()
         Me.txt_NumMisTrb = New System.Windows.Forms.TextBox()
         Me.txt_NumCajaSalud = New System.Windows.Forms.TextBox()
-        Me.txt_UfvFina = New System.Windows.Forms.TextBox()
+        Me.txt_UfvFinal = New System.Windows.Forms.TextBox()
         Me.txt_UfvIncial = New System.Windows.Forms.TextBox()
         Me.txt_SMN = New System.Windows.Forms.TextBox()
         Me.txt_GestionPlanilla = New System.Windows.Forms.TextBox()
         Me.txt_MesPlanilla = New System.Windows.Forms.TextBox()
         Me.txt_DiaPlanilla = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -163,12 +163,12 @@ Partial Class UF_DATOS_GENERALES
         Me.txt_NumCajaSalud.Size = New System.Drawing.Size(378, 20)
         Me.txt_NumCajaSalud.TabIndex = 13
         '
-        'txt_UfvFina
+        'txt_UfvFinal
         '
-        Me.txt_UfvFina.Location = New System.Drawing.Point(483, 205)
-        Me.txt_UfvFina.Name = "txt_UfvFina"
-        Me.txt_UfvFina.Size = New System.Drawing.Size(378, 20)
-        Me.txt_UfvFina.TabIndex = 14
+        Me.txt_UfvFinal.Location = New System.Drawing.Point(483, 205)
+        Me.txt_UfvFinal.Name = "txt_UfvFinal"
+        Me.txt_UfvFinal.Size = New System.Drawing.Size(378, 20)
+        Me.txt_UfvFinal.TabIndex = 14
         '
         'txt_UfvIncial
         '
@@ -208,28 +208,28 @@ Partial Class UF_DATOS_GENERALES
         Me.txt_DiaPlanilla.TabIndex = 19
         Me.txt_DiaPlanilla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Button1
+        'btn_Aceptar
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(788, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "ACEPTAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Aceptar.Location = New System.Drawing.Point(788, 12)
+        Me.btn_Aceptar.Name = "btn_Aceptar"
+        Me.btn_Aceptar.Size = New System.Drawing.Size(94, 23)
+        Me.btn_Aceptar.TabIndex = 20
+        Me.btn_Aceptar.Text = "ACEPTAR"
+        Me.btn_Aceptar.UseVisualStyleBackColor = True
         '
         'UF_DATOS_GENERALES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(891, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_Aceptar)
         Me.Controls.Add(Me.txt_DiaPlanilla)
         Me.Controls.Add(Me.txt_MesPlanilla)
         Me.Controls.Add(Me.txt_GestionPlanilla)
         Me.Controls.Add(Me.txt_SMN)
         Me.Controls.Add(Me.txt_UfvIncial)
-        Me.Controls.Add(Me.txt_UfvFina)
+        Me.Controls.Add(Me.txt_UfvFinal)
         Me.Controls.Add(Me.txt_NumCajaSalud)
         Me.Controls.Add(Me.txt_NumMisTrb)
         Me.Controls.Add(Me.txt_NIT)
@@ -266,11 +266,11 @@ Partial Class UF_DATOS_GENERALES
     Friend WithEvents txt_NIT As Windows.Forms.TextBox
     Friend WithEvents txt_NumMisTrb As Windows.Forms.TextBox
     Friend WithEvents txt_NumCajaSalud As Windows.Forms.TextBox
-    Friend WithEvents txt_UfvFina As Windows.Forms.TextBox
+    Friend WithEvents txt_UfvFinal As Windows.Forms.TextBox
     Friend WithEvents txt_UfvIncial As Windows.Forms.TextBox
     Friend WithEvents txt_SMN As Windows.Forms.TextBox
     Friend WithEvents txt_GestionPlanilla As Windows.Forms.TextBox
     Friend WithEvents txt_MesPlanilla As Windows.Forms.TextBox
     Friend WithEvents txt_DiaPlanilla As Windows.Forms.TextBox
-    Friend WithEvents Button1 As Windows.Forms.Button
+    Friend WithEvents btn_Aceptar As Windows.Forms.Button
 End Class
