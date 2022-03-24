@@ -211,6 +211,9 @@
     <Compile Include="UF_DATOS_GENERALES.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="UF_DATOS_GENERALES.resx">
+      <DependentUpon>UF_DATOS_GENERALES.vb</DependentUpon>
+    </EmbeddedResource>
     <None Include="COMPLEMENTO PLANILLA SUELDOS Y SALARIOS_TemporaryKey.pfx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
