@@ -309,6 +309,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_OcuapacionQueDesp.Name = "txt_OcuapacionQueDesp"
         Me.txt_OcuapacionQueDesp.Size = New System.Drawing.Size(180, 22)
         Me.txt_OcuapacionQueDesp.TabIndex = 17
+        Me.txt_OcuapacionQueDesp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_PaisNacionalidad
         '
@@ -316,6 +317,8 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_PaisNacionalidad.Name = "txt_PaisNacionalidad"
         Me.txt_PaisNacionalidad.Size = New System.Drawing.Size(180, 22)
         Me.txt_PaisNacionalidad.TabIndex = 16
+        Me.txt_PaisNacionalidad.Text = "BOLIVIA"
+        Me.txt_PaisNacionalidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_CI
         '
@@ -323,6 +326,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_CI.Name = "txt_CI"
         Me.txt_CI.Size = New System.Drawing.Size(180, 22)
         Me.txt_CI.TabIndex = 15
+        Me.txt_CI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_DiasPagados
         '
@@ -339,6 +343,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_HaberBasico.Name = "txt_HaberBasico"
         Me.txt_HaberBasico.Size = New System.Drawing.Size(180, 22)
         Me.txt_HaberBasico.TabIndex = 13
+        Me.txt_HaberBasico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_ApellidoMat
         '
@@ -346,6 +351,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_ApellidoMat.Name = "txt_ApellidoMat"
         Me.txt_ApellidoMat.Size = New System.Drawing.Size(180, 22)
         Me.txt_ApellidoMat.TabIndex = 12
+        Me.txt_ApellidoMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_ApellidoPat
         '
@@ -353,6 +359,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_ApellidoPat.Name = "txt_ApellidoPat"
         Me.txt_ApellidoPat.Size = New System.Drawing.Size(180, 22)
         Me.txt_ApellidoPat.TabIndex = 11
+        Me.txt_ApellidoPat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_NombreTrabajador
         '
@@ -360,6 +367,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_NombreTrabajador.Name = "txt_NombreTrabajador"
         Me.txt_NombreTrabajador.Size = New System.Drawing.Size(180, 22)
         Me.txt_NombreTrabajador.TabIndex = 10
+        Me.txt_NombreTrabajador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
         '
@@ -480,32 +488,37 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         '
         'txt_AclaracionCuandoCorrespondeDominical
         '
+        Me.txt_AclaracionCuandoCorrespondeDominical.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_AclaracionCuandoCorrespondeDominical.Location = New System.Drawing.Point(26, 151)
+        Me.txt_AclaracionCuandoCorrespondeDominical.Multiline = True
         Me.txt_AclaracionCuandoCorrespondeDominical.Name = "txt_AclaracionCuandoCorrespondeDominical"
-        Me.txt_AclaracionCuandoCorrespondeDominical.Size = New System.Drawing.Size(436, 22)
+        Me.txt_AclaracionCuandoCorrespondeDominical.Size = New System.Drawing.Size(436, 33)
         Me.txt_AclaracionCuandoCorrespondeDominical.TabIndex = 6
+        Me.txt_AclaracionCuandoCorrespondeDominical.Text = "PARA PODER APLICAR AL BONO DOMINICAL EL TRABAJADOR DEBE SER OBRERO Y HABER LLEGAD" &
+    "O PUNTUAL."
         '
         'txt_CorrespondeDominical
         '
-        Me.txt_CorrespondeDominical.Location = New System.Drawing.Point(341, 112)
+        Me.txt_CorrespondeDominical.Location = New System.Drawing.Point(297, 112)
         Me.txt_CorrespondeDominical.Name = "txt_CorrespondeDominical"
-        Me.txt_CorrespondeDominical.Size = New System.Drawing.Size(121, 22)
+        Me.txt_CorrespondeDominical.ReadOnly = True
+        Me.txt_CorrespondeDominical.Size = New System.Drawing.Size(165, 22)
         Me.txt_CorrespondeDominical.TabIndex = 5
         '
         'ComB_LlegoPuntual
         '
         Me.ComB_LlegoPuntual.FormattingEnabled = True
-        Me.ComB_LlegoPuntual.Location = New System.Drawing.Point(341, 80)
+        Me.ComB_LlegoPuntual.Location = New System.Drawing.Point(297, 80)
         Me.ComB_LlegoPuntual.Name = "ComB_LlegoPuntual"
-        Me.ComB_LlegoPuntual.Size = New System.Drawing.Size(121, 24)
+        Me.ComB_LlegoPuntual.Size = New System.Drawing.Size(165, 24)
         Me.ComB_LlegoPuntual.TabIndex = 4
         '
         'ComB_DominicalOcupacion
         '
         Me.ComB_DominicalOcupacion.FormattingEnabled = True
-        Me.ComB_DominicalOcupacion.Location = New System.Drawing.Point(341, 48)
+        Me.ComB_DominicalOcupacion.Location = New System.Drawing.Point(297, 48)
         Me.ComB_DominicalOcupacion.Name = "ComB_DominicalOcupacion"
-        Me.ComB_DominicalOcupacion.Size = New System.Drawing.Size(121, 24)
+        Me.ComB_DominicalOcupacion.Size = New System.Drawing.Size(165, 24)
         Me.ComB_DominicalOcupacion.TabIndex = 3
         '
         'Label19
@@ -552,22 +565,26 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox5.Controls.Add(Me.Label22)
         Me.GroupBox5.Controls.Add(Me.Label21)
         Me.GroupBox5.Controls.Add(Me.Label20)
+        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.Location = New System.Drawing.Point(836, 269)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(494, 213)
         Me.GroupBox5.TabIndex = 2
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "GroupBox5"
+        Me.GroupBox5.Text = "DATOS DE HABERES EXTRAS DEL TRABAJADOR"
         '
         'txt_HorasDomingos
         '
+        Me.txt_HorasDomingos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_HorasDomingos.Location = New System.Drawing.Point(263, 164)
         Me.txt_HorasDomingos.Name = "txt_HorasDomingos"
         Me.txt_HorasDomingos.Size = New System.Drawing.Size(217, 20)
         Me.txt_HorasDomingos.TabIndex = 11
+        Me.txt_HorasDomingos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ComB_CategoriaTrabajoNoc
         '
+        Me.ComB_CategoriaTrabajoNoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComB_CategoriaTrabajoNoc.FormattingEnabled = True
         Me.ComB_CategoriaTrabajoNoc.Location = New System.Drawing.Point(263, 137)
         Me.ComB_CategoriaTrabajoNoc.Name = "ComB_CategoriaTrabajoNoc"
@@ -576,27 +593,34 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         '
         'txt_HorasNocturnas
         '
+        Me.txt_HorasNocturnas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_HorasNocturnas.Location = New System.Drawing.Point(263, 111)
         Me.txt_HorasNocturnas.Name = "txt_HorasNocturnas"
         Me.txt_HorasNocturnas.Size = New System.Drawing.Size(217, 20)
         Me.txt_HorasNocturnas.TabIndex = 9
+        Me.txt_HorasNocturnas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_HorasExtraordinarias
         '
+        Me.txt_HorasExtraordinarias.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_HorasExtraordinarias.Location = New System.Drawing.Point(261, 85)
         Me.txt_HorasExtraordinarias.Name = "txt_HorasExtraordinarias"
         Me.txt_HorasExtraordinarias.Size = New System.Drawing.Size(219, 20)
         Me.txt_HorasExtraordinarias.TabIndex = 8
+        Me.txt_HorasExtraordinarias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_BonoProduccion
         '
+        Me.txt_BonoProduccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_BonoProduccion.Location = New System.Drawing.Point(261, 59)
         Me.txt_BonoProduccion.Name = "txt_BonoProduccion"
         Me.txt_BonoProduccion.Size = New System.Drawing.Size(219, 20)
         Me.txt_BonoProduccion.TabIndex = 7
+        Me.txt_BonoProduccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ComB_CorrespondeBonoFronteras
         '
+        Me.ComB_CorrespondeBonoFronteras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComB_CorrespondeBonoFronteras.FormattingEnabled = True
         Me.ComB_CorrespondeBonoFronteras.Location = New System.Drawing.Point(261, 32)
         Me.ComB_CorrespondeBonoFronteras.Name = "ComB_CorrespondeBonoFronteras"
@@ -675,29 +699,35 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox6.Controls.Add(Me.Label28)
         Me.GroupBox6.Controls.Add(Me.Label27)
         Me.GroupBox6.Controls.Add(Me.Label26)
+        Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(836, 504)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(494, 170)
         Me.GroupBox6.TabIndex = 3
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "GroupBox6"
+        Me.GroupBox6.Text = "DATOS PARA RC-IVA"
         '
         'txt_SaldoRcIvaMesAnt
         '
+        Me.txt_SaldoRcIvaMesAnt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_SaldoRcIvaMesAnt.Location = New System.Drawing.Point(362, 125)
         Me.txt_SaldoRcIvaMesAnt.Name = "txt_SaldoRcIvaMesAnt"
         Me.txt_SaldoRcIvaMesAnt.Size = New System.Drawing.Size(108, 20)
         Me.txt_SaldoRcIvaMesAnt.TabIndex = 9
+        Me.txt_SaldoRcIvaMesAnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_Form110
         '
+        Me.txt_Form110.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_Form110.Location = New System.Drawing.Point(263, 99)
         Me.txt_Form110.Name = "txt_Form110"
         Me.txt_Form110.Size = New System.Drawing.Size(207, 20)
         Me.txt_Form110.TabIndex = 8
+        Me.txt_Form110.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ComB_NovedadesRCIVA
         '
+        Me.ComB_NovedadesRCIVA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComB_NovedadesRCIVA.FormattingEnabled = True
         Me.ComB_NovedadesRCIVA.Location = New System.Drawing.Point(263, 72)
         Me.ComB_NovedadesRCIVA.Name = "ComB_NovedadesRCIVA"
@@ -706,22 +736,27 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         '
         'txt_TipoDocumentoRCIVA
         '
+        Me.txt_TipoDocumentoRCIVA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_TipoDocumentoRCIVA.Location = New System.Drawing.Point(263, 46)
         Me.txt_TipoDocumentoRCIVA.Name = "txt_TipoDocumentoRCIVA"
         Me.txt_TipoDocumentoRCIVA.Size = New System.Drawing.Size(207, 20)
         Me.txt_TipoDocumentoRCIVA.TabIndex = 6
         Me.txt_TipoDocumentoRCIVA.Text = "CEDULA"
+        Me.txt_TipoDocumentoRCIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_CodigoDependienteRCIVA
         '
+        Me.txt_CodigoDependienteRCIVA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_CodigoDependienteRCIVA.Location = New System.Drawing.Point(263, 20)
         Me.txt_CodigoDependienteRCIVA.Name = "txt_CodigoDependienteRCIVA"
         Me.txt_CodigoDependienteRCIVA.Size = New System.Drawing.Size(207, 20)
         Me.txt_CodigoDependienteRCIVA.TabIndex = 5
+        Me.txt_CodigoDependienteRCIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label30
         '
         Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.Location = New System.Drawing.Point(28, 131)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(308, 13)
@@ -731,6 +766,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label29
         '
         Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.Location = New System.Drawing.Point(28, 104)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(62, 13)
@@ -740,6 +776,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label28
         '
         Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.Location = New System.Drawing.Point(28, 77)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(116, 13)
@@ -749,6 +786,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label27
         '
         Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.Location = New System.Drawing.Point(28, 50)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(126, 13)
@@ -758,6 +796,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label26
         '
         Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.Location = New System.Drawing.Point(28, 23)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(132, 13)
@@ -774,33 +813,38 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox7.Controls.Add(Me.Label33)
         Me.GroupBox7.Controls.Add(Me.Label32)
         Me.GroupBox7.Controls.Add(Me.Label31)
+        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.Location = New System.Drawing.Point(26, 421)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(787, 253)
         Me.GroupBox7.TabIndex = 4
         Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "GroupBox7"
+        Me.GroupBox7.Text = "OTROS INGRESOS E EGRESOS DEL TRABAJADOR"
         '
         'txt_ConceptoOtrosDescuentos
         '
-        Me.txt_ConceptoOtrosDescuentos.Location = New System.Drawing.Point(251, 194)
+        Me.txt_ConceptoOtrosDescuentos.Location = New System.Drawing.Point(251, 159)
+        Me.txt_ConceptoOtrosDescuentos.Multiline = True
         Me.txt_ConceptoOtrosDescuentos.Name = "txt_ConceptoOtrosDescuentos"
-        Me.txt_ConceptoOtrosDescuentos.Size = New System.Drawing.Size(444, 20)
+        Me.txt_ConceptoOtrosDescuentos.Size = New System.Drawing.Size(508, 53)
         Me.txt_ConceptoOtrosDescuentos.TabIndex = 12
         '
         'txt_OtrosDescuentos
         '
         Me.txt_OtrosDescuentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_OtrosDescuentos.Location = New System.Drawing.Point(251, 143)
+        Me.txt_OtrosDescuentos.Location = New System.Drawing.Point(251, 133)
         Me.txt_OtrosDescuentos.Name = "txt_OtrosDescuentos"
         Me.txt_OtrosDescuentos.Size = New System.Drawing.Size(192, 20)
         Me.txt_OtrosDescuentos.TabIndex = 11
+        Me.txt_OtrosDescuentos.Text = "0"
+        Me.txt_OtrosDescuentos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_ConceptoOtrosBonos
         '
-        Me.txt_ConceptoOtrosBonos.Location = New System.Drawing.Point(251, 84)
+        Me.txt_ConceptoOtrosBonos.Location = New System.Drawing.Point(251, 59)
+        Me.txt_ConceptoOtrosBonos.Multiline = True
         Me.txt_ConceptoOtrosBonos.Name = "txt_ConceptoOtrosBonos"
-        Me.txt_ConceptoOtrosBonos.Size = New System.Drawing.Size(444, 20)
+        Me.txt_ConceptoOtrosBonos.Size = New System.Drawing.Size(508, 53)
         Me.txt_ConceptoOtrosBonos.TabIndex = 10
         '
         'txt_OtrosBonos
@@ -810,11 +854,14 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_OtrosBonos.Name = "txt_OtrosBonos"
         Me.txt_OtrosBonos.Size = New System.Drawing.Size(192, 20)
         Me.txt_OtrosBonos.TabIndex = 9
+        Me.txt_OtrosBonos.Text = "0"
+        Me.txt_OtrosBonos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(45, 201)
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(45, 163)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(205, 13)
         Me.Label34.TabIndex = 8
@@ -823,7 +870,8 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(45, 146)
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(45, 136)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(125, 13)
         Me.Label33.TabIndex = 7
@@ -832,7 +880,8 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(45, 91)
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(45, 62)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(169, 13)
         Me.Label32.TabIndex = 6
@@ -841,6 +890,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         'Label31
         '
         Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.Location = New System.Drawing.Point(45, 36)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(89, 13)
@@ -868,6 +918,8 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "UF_DATOS_ESPECIFICOS_AGREGAR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DATOS ESPECIFICOS AGREGAR TRABAJADOR"

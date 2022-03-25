@@ -240,6 +240,8 @@ Partial Class UF_DATOS_GENERALES
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "UF_DATOS_GENERALES"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DATOS GENERALES PLANILLA"

@@ -31,7 +31,6 @@
             Dim DIA_PLANILLA As String
             Dim SALARIO_MINIMO_NACINAL_VIGENTE As String
             Dim SALARIO_MINIMO_NACINAL_VIGENTE_02 As String
-            'Dim SALARIO_MINIMO_NACINAL_VIGENTE_03 As Long
 
 
             '################################################################
@@ -323,7 +322,6 @@
             hojaPrincipalDatos.Activate()
 
             SALARIO_MINIMO_NACINAL_VIGENTE_02 = resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1))
-            '    SALARIO_MINIMO_NACINAL_VIGENTE_03 = .Cells(11, 8).Value
 
             hojaPrePlanilla.Activate()
             n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
@@ -335,27 +333,17 @@
 
                 CI_PRE_PLANILLA = resultadoUb(hojaPrePlanilla.Name, Celda.Address)
                 TOTAL_INGRESO_NETO_RUTA = resultadoUb2(hojaPrePlanilla.Name, Celda.Offset(0, 16).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "-" & resultadoUb2(hojaPrePlanilla.Name, Celda.Offset(0, 17).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1))
-                '        TOTAL_INGRESO_NETO_VALOR = Celda.Offset(0, 16).Value - Celda.Offset(0, 17).Value
 
                 hojaResumenRC_IVA.Activate()
                 plantillaResumenPlnTrib()
-
-
-                '        If TOTAL_INGRESO_NETO_VALOR > (4 * SALARIO_MINIMO_NACINAL_VIGENTE_03) Then
-
-                '            Debug.Print CStr(TOTAL_INGRESO_NETO_VALOR) & " > " & CStr(4 * SALARIO_MINIMO_NACINAL_VIGENTE_03)
 
                 hojaResumenRC_IVA.Activate()
                 .Cells(.Rows.Count, 9).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = CI_PRE_PLANILLA
                 .Cells(.Rows.Count, 12).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=IF(ROUND(" & TOTAL_INGRESO_NETO_RUTA & ",0)>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
                                                                                 "),ROUND(" & TOTAL_INGRESO_NETO_RUTA & ",0),0)"
-
-                '        End If
-
             Next
 
             CalculosPlnTrib(hojaPrincipalDatos, hojaResumenRC_IVA)
-
             recogerResRC_IVA(hojaPrePlanilla, hojaResumenRC_IVA)
 
         End With

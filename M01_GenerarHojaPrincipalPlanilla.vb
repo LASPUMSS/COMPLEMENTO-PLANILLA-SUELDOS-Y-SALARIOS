@@ -4,32 +4,6 @@
 
             .Sheets.Add()
 
-            .Columns("A:A").ColumnWidth = 4.71
-            .Columns("B:B").ColumnWidth = 33.14
-            .Columns("C:C").ColumnWidth = 35.71
-            .Columns("D:D").ColumnWidth = 28.86
-            .Columns("E:E").ColumnWidth = 27.86
-            .Columns("F:F").ColumnWidth = 23.86
-            .Columns("G:G").ColumnWidth = 13.57
-            .Columns("H:H").ColumnWidth = 36
-            .Columns("I:I").ColumnWidth = 28.14
-            .Columns("J:J").ColumnWidth = 26.43
-            .Columns("K:K").ColumnWidth = 18.57
-            .Columns("L:L").ColumnWidth = 24.29
-            .Columns("M:M").ColumnWidth = 27.57
-            .Columns("N:N").ColumnWidth = 41.43
-            .Columns("O:O").ColumnWidth = 49.57
-            .Columns("P:P").ColumnWidth = 42.29
-            .Columns("Q:Q").ColumnWidth = 45
-            .Columns("R:R").ColumnWidth = 42.29
-            .Columns("S:S").ColumnWidth = 13.86
-            .Columns("T:T").ColumnWidth = 29.43
-            .Columns("U:U").ColumnWidth = 29.86
-            .Columns("V:V").ColumnWidth = 18.57
-            .Columns("W:W").ColumnWidth = 36.57
-            .Columns("X:X").ColumnWidth = 26.43
-            .Columns("Y:Y").ColumnWidth = 44.14
-
             .Cells(1, 1).Value = "ELABORACIÓN DE PLANILLA DE SUELDOS Y SALARIOS"
             With .Range(.Cells(1, 1), .Cells(1, 33))
                 .Merge()
@@ -85,7 +59,6 @@
                 .Font.Bold = True
             End With
 
-
             .Cells(15, 1).Value = "DATOS ESPECIFICOS"
             With .Range(.Cells(15, 1), .Cells(15, 33))
                 .Merge()
@@ -97,7 +70,6 @@
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent5
                 .Interior.TintAndShade = 0.399975585192419
             End With
-
 
             .Cells(16, 1).Value = "Nº"
             .Cells(16, 2).Value = "DOCUMENTO DE IDENTIDAD"
@@ -141,6 +113,17 @@
                 .Interior.Pattern = Microsoft.Office.Interop.Excel.Constants.xlSolid
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent5
                 .Interior.TintAndShade = -0.249977111117893
+            End With
+
+            .Cells(4, 8).HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
+            With .Range(.Cells(5, 8), .Cells(11, 8))
+                .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
+                .NumberFormat = "0"
+            End With
+
+            With .Range(.Cells(12, 8), .Cells(13, 8))
+                .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
+                .NumberFormat = "0.00000000"
             End With
 
             .ActiveWindow.Zoom = 60

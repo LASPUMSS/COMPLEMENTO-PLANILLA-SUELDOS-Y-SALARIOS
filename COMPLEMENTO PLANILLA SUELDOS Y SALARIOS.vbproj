@@ -181,6 +181,7 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
+    <Compile Include="M00_FuncionesExtras.vb" />
     <Compile Include="M01_GenerarHojaPrincipalPlanilla.vb" />
     <Compile Include="M02_HojaPrincipalParaPlanilla.vb" />
     <Compile Include="M03_DetalleANS.vb" />

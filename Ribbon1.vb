@@ -34,15 +34,46 @@ Public Class Ribbon1
     End Sub
     Public Sub btn_AgregarDatosGenerales(Control As Office.IRibbonControl)
         Dim frm As New UF_DATOS_GENERALES
-        frm.ShowDialog()
+
+        With Globals.ThisAddIn.Application
+            If .Cells(1, 1).Value = "ELABORACIÓN DE PLANILLA DE SUELDOS Y SALARIOS" And
+                .Cells(2, 1).Value = "DATOS GENERALES" And
+                .Cells(15, 1).Value = "DATOS ESPECIFICOS" Then
+
+                frm.ShowDialog()
+            Else
+                MsgBox("LA HOJA ACTUAL NO ES LA ADECUADA PARA INTRODUCIR LOS DATOS. GENERE UN HOJA PRINCIPAL PARA EJECUTAR ESTE PROCEDIMIENTO.", MsgBoxStyle.Exclamation)
+            End If
+        End With
+
     End Sub
     Public Sub btn_AgregarDatosEspecificos(Control As Office.IRibbonControl)
         Dim frm As New UF_DATOS_ESPECIFICOS_AGREGAR
-        frm.ShowDialog()
+
+        With Globals.ThisAddIn.Application
+            If .Cells(1, 1).Value = "ELABORACIÓN DE PLANILLA DE SUELDOS Y SALARIOS" And
+                .Cells(2, 1).Value = "DATOS GENERALES" And
+                .Cells(15, 1).Value = "DATOS ESPECIFICOS" Then
+
+                frm.ShowDialog()
+            Else
+                MsgBox("LA HOJA ACTUAL NO ES LA ADECUADA PARA INTRODUCIR LOS DATOS. GENERE UN HOJA PRINCIPAL PARA EJECUTAR ESTE PROCEDIMIENTO.", MsgBoxStyle.Exclamation)
+            End If
+        End With
     End Sub
     Public Sub btn_ModificarDatosEspecificos(Control As Office.IRibbonControl)
         Dim frm As New UF_DATOS_ESPECIFICOS_MODIFICAR
-        frm.ShowDialog()
+
+        With Globals.ThisAddIn.Application
+            If .Cells(1, 1).Value = "ELABORACIÓN DE PLANILLA DE SUELDOS Y SALARIOS" And
+                .Cells(2, 1).Value = "DATOS GENERALES" And
+                .Cells(15, 1).Value = "DATOS ESPECIFICOS" Then
+
+                frm.ShowDialog()
+            Else
+                MsgBox("LA HOJA ACTUAL NO ES LA ADECUADA PARA INTRODUCIR LOS DATOS. GENERE UN HOJA PRINCIPAL PARA EJECUTAR ESTE PROCEDIMIENTO.", MsgBoxStyle.Exclamation)
+            End If
+        End With
     End Sub
     Public Sub btn_GenerarPlanillaSueldosSalarios(Control As Office.IRibbonControl)
         hojaPrinciplaPlanillaSueldosSalarios()
