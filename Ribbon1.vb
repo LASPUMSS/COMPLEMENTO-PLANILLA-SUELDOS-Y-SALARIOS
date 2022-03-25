@@ -28,10 +28,25 @@ Public Class Ribbon1
         Return GetResourceText("COMPLEMENTO_PLANILLA_SUELDOS_Y_SALARIOS.Ribbon1.xml")
     End Function
 
+
     Public Sub btn_GenerarHojaPrincipalDatos(Control As Office.IRibbonControl)
         generarPlantillaHojaPrincipal()
     End Sub
-
+    Public Sub btn_AgregarDatosGenerales(Control As Office.IRibbonControl)
+        Dim frm As New UF_DATOS_GENERALES
+        frm.ShowDialog()
+    End Sub
+    Public Sub btn_AgregarDatosEspecificos(Control As Office.IRibbonControl)
+        Dim frm As New UF_DATOS_ESPECIFICOS_AGREGAR
+        frm.ShowDialog()
+    End Sub
+    Public Sub btn_ModificarDatosEspecificos(Control As Office.IRibbonControl)
+        Dim frm As New UF_DATOS_ESPECIFICOS_MODIFICAR
+        frm.ShowDialog()
+    End Sub
+    Public Sub btn_GenerarPlanillaSueldosSalarios(Control As Office.IRibbonControl)
+        hojaPrinciplaPlanillaSueldosSalarios()
+    End Sub
 #Region "Devoluciones de llamada de la cinta de opciones"
     'Cree métodos de devolución de llamada aquí. Para obtener más información sobre la adición de métodos de devolución de llamada, visite https://go.microsoft.com/fwlink/?LinkID=271226
     Public Sub Ribbon_Load(ByVal ribbonUI As Office.IRibbonUI)

@@ -31,7 +31,6 @@ Partial Class UF_DATOS_GENERALES
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_NombreRazonSocial = New System.Windows.Forms.TextBox()
         Me.txt_NIT = New System.Windows.Forms.TextBox()
         Me.txt_NumMisTrb = New System.Windows.Forms.TextBox()
@@ -41,7 +40,6 @@ Partial Class UF_DATOS_GENERALES
         Me.txt_SMN = New System.Windows.Forms.TextBox()
         Me.txt_GestionPlanilla = New System.Windows.Forms.TextBox()
         Me.txt_MesPlanilla = New System.Windows.Forms.TextBox()
-        Me.txt_DiaPlanilla = New System.Windows.Forms.TextBox()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -126,66 +124,72 @@ Partial Class UF_DATOS_GENERALES
         Me.Label9.TabIndex = 8
         Me.Label9.Text = "MES PLANILLA:"
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(26, 408)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(81, 13)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "DIA PLANILLA:"
-        '
         'txt_NombreRazonSocial
         '
+        Me.txt_NombreRazonSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_NombreRazonSocial.Location = New System.Drawing.Point(483, 45)
         Me.txt_NombreRazonSocial.Name = "txt_NombreRazonSocial"
         Me.txt_NombreRazonSocial.Size = New System.Drawing.Size(378, 20)
         Me.txt_NombreRazonSocial.TabIndex = 10
+        Me.txt_NombreRazonSocial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_NIT
         '
+        Me.txt_NIT.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_NIT.Location = New System.Drawing.Point(483, 85)
         Me.txt_NIT.Name = "txt_NIT"
         Me.txt_NIT.Size = New System.Drawing.Size(378, 20)
         Me.txt_NIT.TabIndex = 11
+        Me.txt_NIT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_NumMisTrb
         '
+        Me.txt_NumMisTrb.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_NumMisTrb.Location = New System.Drawing.Point(483, 125)
         Me.txt_NumMisTrb.Name = "txt_NumMisTrb"
         Me.txt_NumMisTrb.Size = New System.Drawing.Size(378, 20)
         Me.txt_NumMisTrb.TabIndex = 12
+        Me.txt_NumMisTrb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_NumCajaSalud
         '
+        Me.txt_NumCajaSalud.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_NumCajaSalud.Location = New System.Drawing.Point(483, 165)
         Me.txt_NumCajaSalud.Name = "txt_NumCajaSalud"
         Me.txt_NumCajaSalud.Size = New System.Drawing.Size(378, 20)
         Me.txt_NumCajaSalud.TabIndex = 13
+        Me.txt_NumCajaSalud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_UfvFinal
         '
+        Me.txt_UfvFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_UfvFinal.Location = New System.Drawing.Point(483, 205)
         Me.txt_UfvFinal.Name = "txt_UfvFinal"
         Me.txt_UfvFinal.Size = New System.Drawing.Size(378, 20)
         Me.txt_UfvFinal.TabIndex = 14
+        Me.txt_UfvFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_UfvIncial
         '
+        Me.txt_UfvIncial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_UfvIncial.Location = New System.Drawing.Point(483, 245)
         Me.txt_UfvIncial.Name = "txt_UfvIncial"
         Me.txt_UfvIncial.Size = New System.Drawing.Size(378, 20)
         Me.txt_UfvIncial.TabIndex = 15
+        Me.txt_UfvIncial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_SMN
         '
+        Me.txt_SMN.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_SMN.Location = New System.Drawing.Point(483, 285)
         Me.txt_SMN.Name = "txt_SMN"
         Me.txt_SMN.Size = New System.Drawing.Size(378, 20)
         Me.txt_SMN.TabIndex = 16
+        Me.txt_SMN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_GestionPlanilla
         '
+        Me.txt_GestionPlanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_GestionPlanilla.Location = New System.Drawing.Point(483, 325)
         Me.txt_GestionPlanilla.Name = "txt_GestionPlanilla"
         Me.txt_GestionPlanilla.Size = New System.Drawing.Size(378, 20)
@@ -194,19 +198,12 @@ Partial Class UF_DATOS_GENERALES
         '
         'txt_MesPlanilla
         '
+        Me.txt_MesPlanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_MesPlanilla.Location = New System.Drawing.Point(483, 365)
         Me.txt_MesPlanilla.Name = "txt_MesPlanilla"
         Me.txt_MesPlanilla.Size = New System.Drawing.Size(378, 20)
         Me.txt_MesPlanilla.TabIndex = 18
         Me.txt_MesPlanilla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_DiaPlanilla
-        '
-        Me.txt_DiaPlanilla.Location = New System.Drawing.Point(483, 405)
-        Me.txt_DiaPlanilla.Name = "txt_DiaPlanilla"
-        Me.txt_DiaPlanilla.Size = New System.Drawing.Size(378, 20)
-        Me.txt_DiaPlanilla.TabIndex = 19
-        Me.txt_DiaPlanilla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btn_Aceptar
         '
@@ -222,9 +219,8 @@ Partial Class UF_DATOS_GENERALES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(891, 450)
+        Me.ClientSize = New System.Drawing.Size(891, 407)
         Me.Controls.Add(Me.btn_Aceptar)
-        Me.Controls.Add(Me.txt_DiaPlanilla)
         Me.Controls.Add(Me.txt_MesPlanilla)
         Me.Controls.Add(Me.txt_GestionPlanilla)
         Me.Controls.Add(Me.txt_SMN)
@@ -234,7 +230,6 @@ Partial Class UF_DATOS_GENERALES
         Me.Controls.Add(Me.txt_NumMisTrb)
         Me.Controls.Add(Me.txt_NIT)
         Me.Controls.Add(Me.txt_NombreRazonSocial)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -246,6 +241,7 @@ Partial Class UF_DATOS_GENERALES
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "UF_DATOS_GENERALES"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DATOS GENERALES PLANILLA"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -261,7 +257,6 @@ Partial Class UF_DATOS_GENERALES
     Friend WithEvents Label7 As Windows.Forms.Label
     Friend WithEvents Label8 As Windows.Forms.Label
     Friend WithEvents Label9 As Windows.Forms.Label
-    Friend WithEvents Label10 As Windows.Forms.Label
     Friend WithEvents txt_NombreRazonSocial As Windows.Forms.TextBox
     Friend WithEvents txt_NIT As Windows.Forms.TextBox
     Friend WithEvents txt_NumMisTrb As Windows.Forms.TextBox
@@ -271,6 +266,5 @@ Partial Class UF_DATOS_GENERALES
     Friend WithEvents txt_SMN As Windows.Forms.TextBox
     Friend WithEvents txt_GestionPlanilla As Windows.Forms.TextBox
     Friend WithEvents txt_MesPlanilla As Windows.Forms.TextBox
-    Friend WithEvents txt_DiaPlanilla As Windows.Forms.TextBox
     Friend WithEvents btn_Aceptar As Windows.Forms.Button
 End Class

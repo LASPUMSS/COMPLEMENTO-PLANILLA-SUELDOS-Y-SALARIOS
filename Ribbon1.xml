@@ -4,11 +4,11 @@
     <tabs>
       <tab id="PlanillaSueldosSalarios" label="Planilla Sueldos Y Salaris Bolivia">
         <group id="GPSS" label="My Group">
-			<button onAction="btn_GenerarHojaPrincipalDatos" id="btn_GenerarHojaPrincipalDatos" label="Generar Hoja Principal" imageMso="NewDistributionList" size="large"/>
-			<button id="btn_AgregarDatosGenerales" label="Datos Generales" imageMso="GroupCaptions" size="normal"/>
-			<button id="btn_AgregarDatosEspecificos" label="Datos Especificos" imageMso="TableListPermissions" size="normal"/>
-			<button id="btn_AgregarTrabajador" label="Agregar Trabajador" imageMso="AddOrRemoveAttendees" size="normal"/>
-			<button id="btn_GenerarPlanillaSueldosSalarios" label="Generar Planilla" imageMso="RecordsRefreshMenu" size="normal"/>
+			<button id="btn_GenerarHojaPrincipalDatos" onAction="btn_GenerarHojaPrincipalDatos" label="Generar Hoja Principal" imageMso="NewDistributionList" size="large"/>
+			<button id="btn_AgregarDatosGenerales" onAction="btn_AgregarDatosGenerales" label="Datos Generales" imageMso="GroupCaptions" size="normal"/>
+			<button id="btn_AgregarDatosEspecificos" onAction="btn_AgregarDatosEspecificos" label="Agregar Registro" imageMso="TableListPermissions" size="normal"/>
+			<button id="btn_ModificarDatosEspecificos" onAction="btn_ModificarDatosEspecificos" label="Modificar Registro" imageMso="AddOrRemoveAttendees" size="normal"/>
+			<button id="btn_GenerarPlanillaSueldosSalarios" onAction="btn_GenerarPlanillaSueldosSalarios" label="Generar Planilla" imageMso="RecordsRefreshMenu" size="normal"/>
         </group>
       </tab>
     </tabs>

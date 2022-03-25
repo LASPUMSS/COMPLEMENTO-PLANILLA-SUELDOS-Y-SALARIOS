@@ -58,10 +58,20 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.txt_AclaracionCuandoCorrespondeDominical = New System.Windows.Forms.TextBox()
+        Me.txt_CorrespondeDominical = New System.Windows.Forms.TextBox()
+        Me.ComB_LlegoPuntual = New System.Windows.Forms.ComboBox()
+        Me.ComB_DominicalOcupacion = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txt_HorasDomingos = New System.Windows.Forms.TextBox()
+        Me.ComB_CategoriaTrabajoNoc = New System.Windows.Forms.ComboBox()
+        Me.txt_HorasNocturnas = New System.Windows.Forms.TextBox()
+        Me.txt_HorasExtraordinarias = New System.Windows.Forms.TextBox()
+        Me.txt_BonoProduccion = New System.Windows.Forms.TextBox()
+        Me.ComB_CorrespondeBonoFronteras = New System.Windows.Forms.ComboBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -69,35 +79,25 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.txt_SaldoRcIvaMesAnt = New System.Windows.Forms.TextBox()
+        Me.txt_Form110 = New System.Windows.Forms.TextBox()
+        Me.ComB_NovedadesRCIVA = New System.Windows.Forms.ComboBox()
+        Me.txt_TipoDocumentoRCIVA = New System.Windows.Forms.TextBox()
+        Me.txt_CodigoDependienteRCIVA = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.txt_ConceptoOtrosDescuentos = New System.Windows.Forms.TextBox()
+        Me.txt_OtrosDescuentos = New System.Windows.Forms.TextBox()
+        Me.txt_ConceptoOtrosBonos = New System.Windows.Forms.TextBox()
+        Me.txt_OtrosBonos = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.ComB_DominicalOcupacion = New System.Windows.Forms.ComboBox()
-        Me.ComB_LlegoPuntual = New System.Windows.Forms.ComboBox()
-        Me.txt_CorrespondeDominical = New System.Windows.Forms.TextBox()
-        Me.txt_AclaracionCuandoCorrespondeDominical = New System.Windows.Forms.TextBox()
-        Me.ComB_CorrespondeBonoFronteras = New System.Windows.Forms.ComboBox()
-        Me.txt_BonoProduccion = New System.Windows.Forms.TextBox()
-        Me.txt_HorasExtraordinarias = New System.Windows.Forms.TextBox()
-        Me.txt_HorasNocturnas = New System.Windows.Forms.TextBox()
-        Me.ComB_CategoriaTrabajoNoc = New System.Windows.Forms.ComboBox()
-        Me.txt_HorasDomingos = New System.Windows.Forms.TextBox()
-        Me.txt_CodigoDependienteRCIVA = New System.Windows.Forms.TextBox()
-        Me.txt_TipoDocumentoRCIVA = New System.Windows.Forms.TextBox()
-        Me.ComB_NovedadesRCIVA = New System.Windows.Forms.ComboBox()
-        Me.txt_Form110 = New System.Windows.Forms.TextBox()
-        Me.txt_SaldoRcIvaMesAnt = New System.Windows.Forms.TextBox()
-        Me.txt_OtrosBonos = New System.Windows.Forms.TextBox()
-        Me.txt_ConceptoOtrosBonos = New System.Windows.Forms.TextBox()
-        Me.txt_OtrosDescuentos = New System.Windows.Forms.TextBox()
-        Me.txt_ConceptoOtrosDescuentos = New System.Windows.Forms.TextBox()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -188,24 +188,30 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         '
         'txt_DiaIng
         '
+        Me.txt_DiaIng.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_DiaIng.Location = New System.Drawing.Point(203, 37)
         Me.txt_DiaIng.Name = "txt_DiaIng"
         Me.txt_DiaIng.Size = New System.Drawing.Size(52, 20)
         Me.txt_DiaIng.TabIndex = 2
+        Me.txt_DiaIng.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_MesIng
         '
+        Me.txt_MesIng.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_MesIng.Location = New System.Drawing.Point(112, 37)
         Me.txt_MesIng.Name = "txt_MesIng"
         Me.txt_MesIng.Size = New System.Drawing.Size(52, 20)
         Me.txt_MesIng.TabIndex = 1
+        Me.txt_MesIng.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_GestionIng
         '
+        Me.txt_GestionIng.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_GestionIng.Location = New System.Drawing.Point(21, 37)
         Me.txt_GestionIng.Name = "txt_GestionIng"
         Me.txt_GestionIng.Size = New System.Drawing.Size(52, 20)
         Me.txt_GestionIng.TabIndex = 0
+        Me.txt_GestionIng.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox2
         '
@@ -255,24 +261,30 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         '
         'txt_DiaNac
         '
+        Me.txt_DiaNac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_DiaNac.Location = New System.Drawing.Point(203, 37)
         Me.txt_DiaNac.Name = "txt_DiaNac"
         Me.txt_DiaNac.Size = New System.Drawing.Size(52, 20)
         Me.txt_DiaNac.TabIndex = 2
+        Me.txt_DiaNac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_MesNac
         '
+        Me.txt_MesNac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_MesNac.Location = New System.Drawing.Point(112, 37)
         Me.txt_MesNac.Name = "txt_MesNac"
         Me.txt_MesNac.Size = New System.Drawing.Size(52, 20)
         Me.txt_MesNac.TabIndex = 1
+        Me.txt_MesNac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_GestionNac
         '
+        Me.txt_GestionNac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_GestionNac.Location = New System.Drawing.Point(21, 37)
         Me.txt_GestionNac.Name = "txt_GestionNac"
         Me.txt_GestionNac.Size = New System.Drawing.Size(52, 20)
         Me.txt_GestionNac.TabIndex = 0
+        Me.txt_GestionNac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_HorasPagadas
         '
@@ -280,6 +292,8 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_HorasPagadas.Name = "txt_HorasPagadas"
         Me.txt_HorasPagadas.Size = New System.Drawing.Size(180, 22)
         Me.txt_HorasPagadas.TabIndex = 19
+        Me.txt_HorasPagadas.Text = "8"
+        Me.txt_HorasPagadas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ComB_Sexo
         '
@@ -316,6 +330,8 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.txt_DiasPagados.Name = "txt_DiasPagados"
         Me.txt_DiasPagados.Size = New System.Drawing.Size(180, 22)
         Me.txt_DiasPagados.TabIndex = 14
+        Me.txt_DiasPagados.Text = "30"
+        Me.txt_DiasPagados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_HaberBasico
         '
@@ -462,6 +478,36 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "DOMINICAL"
         '
+        'txt_AclaracionCuandoCorrespondeDominical
+        '
+        Me.txt_AclaracionCuandoCorrespondeDominical.Location = New System.Drawing.Point(26, 151)
+        Me.txt_AclaracionCuandoCorrespondeDominical.Name = "txt_AclaracionCuandoCorrespondeDominical"
+        Me.txt_AclaracionCuandoCorrespondeDominical.Size = New System.Drawing.Size(436, 22)
+        Me.txt_AclaracionCuandoCorrespondeDominical.TabIndex = 6
+        '
+        'txt_CorrespondeDominical
+        '
+        Me.txt_CorrespondeDominical.Location = New System.Drawing.Point(341, 112)
+        Me.txt_CorrespondeDominical.Name = "txt_CorrespondeDominical"
+        Me.txt_CorrespondeDominical.Size = New System.Drawing.Size(121, 22)
+        Me.txt_CorrespondeDominical.TabIndex = 5
+        '
+        'ComB_LlegoPuntual
+        '
+        Me.ComB_LlegoPuntual.FormattingEnabled = True
+        Me.ComB_LlegoPuntual.Location = New System.Drawing.Point(341, 80)
+        Me.ComB_LlegoPuntual.Name = "ComB_LlegoPuntual"
+        Me.ComB_LlegoPuntual.Size = New System.Drawing.Size(121, 24)
+        Me.ComB_LlegoPuntual.TabIndex = 4
+        '
+        'ComB_DominicalOcupacion
+        '
+        Me.ComB_DominicalOcupacion.FormattingEnabled = True
+        Me.ComB_DominicalOcupacion.Location = New System.Drawing.Point(341, 48)
+        Me.ComB_DominicalOcupacion.Name = "ComB_DominicalOcupacion"
+        Me.ComB_DominicalOcupacion.Size = New System.Drawing.Size(121, 24)
+        Me.ComB_DominicalOcupacion.TabIndex = 3
+        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -512,6 +558,50 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox5.TabIndex = 2
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "GroupBox5"
+        '
+        'txt_HorasDomingos
+        '
+        Me.txt_HorasDomingos.Location = New System.Drawing.Point(263, 164)
+        Me.txt_HorasDomingos.Name = "txt_HorasDomingos"
+        Me.txt_HorasDomingos.Size = New System.Drawing.Size(217, 20)
+        Me.txt_HorasDomingos.TabIndex = 11
+        '
+        'ComB_CategoriaTrabajoNoc
+        '
+        Me.ComB_CategoriaTrabajoNoc.FormattingEnabled = True
+        Me.ComB_CategoriaTrabajoNoc.Location = New System.Drawing.Point(263, 137)
+        Me.ComB_CategoriaTrabajoNoc.Name = "ComB_CategoriaTrabajoNoc"
+        Me.ComB_CategoriaTrabajoNoc.Size = New System.Drawing.Size(217, 21)
+        Me.ComB_CategoriaTrabajoNoc.TabIndex = 10
+        '
+        'txt_HorasNocturnas
+        '
+        Me.txt_HorasNocturnas.Location = New System.Drawing.Point(263, 111)
+        Me.txt_HorasNocturnas.Name = "txt_HorasNocturnas"
+        Me.txt_HorasNocturnas.Size = New System.Drawing.Size(217, 20)
+        Me.txt_HorasNocturnas.TabIndex = 9
+        '
+        'txt_HorasExtraordinarias
+        '
+        Me.txt_HorasExtraordinarias.Location = New System.Drawing.Point(261, 85)
+        Me.txt_HorasExtraordinarias.Name = "txt_HorasExtraordinarias"
+        Me.txt_HorasExtraordinarias.Size = New System.Drawing.Size(219, 20)
+        Me.txt_HorasExtraordinarias.TabIndex = 8
+        '
+        'txt_BonoProduccion
+        '
+        Me.txt_BonoProduccion.Location = New System.Drawing.Point(261, 59)
+        Me.txt_BonoProduccion.Name = "txt_BonoProduccion"
+        Me.txt_BonoProduccion.Size = New System.Drawing.Size(219, 20)
+        Me.txt_BonoProduccion.TabIndex = 7
+        '
+        'ComB_CorrespondeBonoFronteras
+        '
+        Me.ComB_CorrespondeBonoFronteras.FormattingEnabled = True
+        Me.ComB_CorrespondeBonoFronteras.Location = New System.Drawing.Point(261, 32)
+        Me.ComB_CorrespondeBonoFronteras.Name = "ComB_CorrespondeBonoFronteras"
+        Me.ComB_CorrespondeBonoFronteras.Size = New System.Drawing.Size(219, 21)
+        Me.ComB_CorrespondeBonoFronteras.TabIndex = 6
         '
         'Label25
         '
@@ -592,6 +682,43 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "GroupBox6"
         '
+        'txt_SaldoRcIvaMesAnt
+        '
+        Me.txt_SaldoRcIvaMesAnt.Location = New System.Drawing.Point(362, 125)
+        Me.txt_SaldoRcIvaMesAnt.Name = "txt_SaldoRcIvaMesAnt"
+        Me.txt_SaldoRcIvaMesAnt.Size = New System.Drawing.Size(108, 20)
+        Me.txt_SaldoRcIvaMesAnt.TabIndex = 9
+        '
+        'txt_Form110
+        '
+        Me.txt_Form110.Location = New System.Drawing.Point(263, 99)
+        Me.txt_Form110.Name = "txt_Form110"
+        Me.txt_Form110.Size = New System.Drawing.Size(207, 20)
+        Me.txt_Form110.TabIndex = 8
+        '
+        'ComB_NovedadesRCIVA
+        '
+        Me.ComB_NovedadesRCIVA.FormattingEnabled = True
+        Me.ComB_NovedadesRCIVA.Location = New System.Drawing.Point(263, 72)
+        Me.ComB_NovedadesRCIVA.Name = "ComB_NovedadesRCIVA"
+        Me.ComB_NovedadesRCIVA.Size = New System.Drawing.Size(207, 21)
+        Me.ComB_NovedadesRCIVA.TabIndex = 7
+        '
+        'txt_TipoDocumentoRCIVA
+        '
+        Me.txt_TipoDocumentoRCIVA.Location = New System.Drawing.Point(263, 46)
+        Me.txt_TipoDocumentoRCIVA.Name = "txt_TipoDocumentoRCIVA"
+        Me.txt_TipoDocumentoRCIVA.Size = New System.Drawing.Size(207, 20)
+        Me.txt_TipoDocumentoRCIVA.TabIndex = 6
+        Me.txt_TipoDocumentoRCIVA.Text = "CEDULA"
+        '
+        'txt_CodigoDependienteRCIVA
+        '
+        Me.txt_CodigoDependienteRCIVA.Location = New System.Drawing.Point(263, 20)
+        Me.txt_CodigoDependienteRCIVA.Name = "txt_CodigoDependienteRCIVA"
+        Me.txt_CodigoDependienteRCIVA.Size = New System.Drawing.Size(207, 20)
+        Me.txt_CodigoDependienteRCIVA.TabIndex = 5
+        '
         'Label30
         '
         Me.Label30.AutoSize = True
@@ -654,6 +781,36 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "GroupBox7"
         '
+        'txt_ConceptoOtrosDescuentos
+        '
+        Me.txt_ConceptoOtrosDescuentos.Location = New System.Drawing.Point(251, 194)
+        Me.txt_ConceptoOtrosDescuentos.Name = "txt_ConceptoOtrosDescuentos"
+        Me.txt_ConceptoOtrosDescuentos.Size = New System.Drawing.Size(444, 20)
+        Me.txt_ConceptoOtrosDescuentos.TabIndex = 12
+        '
+        'txt_OtrosDescuentos
+        '
+        Me.txt_OtrosDescuentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_OtrosDescuentos.Location = New System.Drawing.Point(251, 143)
+        Me.txt_OtrosDescuentos.Name = "txt_OtrosDescuentos"
+        Me.txt_OtrosDescuentos.Size = New System.Drawing.Size(192, 20)
+        Me.txt_OtrosDescuentos.TabIndex = 11
+        '
+        'txt_ConceptoOtrosBonos
+        '
+        Me.txt_ConceptoOtrosBonos.Location = New System.Drawing.Point(251, 84)
+        Me.txt_ConceptoOtrosBonos.Name = "txt_ConceptoOtrosBonos"
+        Me.txt_ConceptoOtrosBonos.Size = New System.Drawing.Size(444, 20)
+        Me.txt_ConceptoOtrosBonos.TabIndex = 10
+        '
+        'txt_OtrosBonos
+        '
+        Me.txt_OtrosBonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_OtrosBonos.Location = New System.Drawing.Point(251, 33)
+        Me.txt_OtrosBonos.Name = "txt_OtrosBonos"
+        Me.txt_OtrosBonos.Size = New System.Drawing.Size(192, 20)
+        Me.txt_OtrosBonos.TabIndex = 9
+        '
         'Label34
         '
         Me.Label34.AutoSize = True
@@ -690,144 +847,6 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.Label31.TabIndex = 5
         Me.Label31.Text = "OTROS BONOS:"
         '
-        'ComB_DominicalOcupacion
-        '
-        Me.ComB_DominicalOcupacion.FormattingEnabled = True
-        Me.ComB_DominicalOcupacion.Location = New System.Drawing.Point(341, 48)
-        Me.ComB_DominicalOcupacion.Name = "ComB_DominicalOcupacion"
-        Me.ComB_DominicalOcupacion.Size = New System.Drawing.Size(121, 24)
-        Me.ComB_DominicalOcupacion.TabIndex = 3
-        '
-        'ComB_LlegoPuntual
-        '
-        Me.ComB_LlegoPuntual.FormattingEnabled = True
-        Me.ComB_LlegoPuntual.Location = New System.Drawing.Point(341, 80)
-        Me.ComB_LlegoPuntual.Name = "ComB_LlegoPuntual"
-        Me.ComB_LlegoPuntual.Size = New System.Drawing.Size(121, 24)
-        Me.ComB_LlegoPuntual.TabIndex = 4
-        '
-        'txt_CorrespondeDominical
-        '
-        Me.txt_CorrespondeDominical.Location = New System.Drawing.Point(341, 112)
-        Me.txt_CorrespondeDominical.Name = "txt_CorrespondeDominical"
-        Me.txt_CorrespondeDominical.Size = New System.Drawing.Size(121, 22)
-        Me.txt_CorrespondeDominical.TabIndex = 5
-        '
-        'txt_AclaracionCuandoCorrespondeDominical
-        '
-        Me.txt_AclaracionCuandoCorrespondeDominical.Location = New System.Drawing.Point(26, 151)
-        Me.txt_AclaracionCuandoCorrespondeDominical.Name = "txt_AclaracionCuandoCorrespondeDominical"
-        Me.txt_AclaracionCuandoCorrespondeDominical.Size = New System.Drawing.Size(436, 22)
-        Me.txt_AclaracionCuandoCorrespondeDominical.TabIndex = 6
-        '
-        'ComB_CorrespondeBonoFronteras
-        '
-        Me.ComB_CorrespondeBonoFronteras.FormattingEnabled = True
-        Me.ComB_CorrespondeBonoFronteras.Location = New System.Drawing.Point(261, 32)
-        Me.ComB_CorrespondeBonoFronteras.Name = "ComB_CorrespondeBonoFronteras"
-        Me.ComB_CorrespondeBonoFronteras.Size = New System.Drawing.Size(219, 21)
-        Me.ComB_CorrespondeBonoFronteras.TabIndex = 6
-        '
-        'txt_BonoProduccion
-        '
-        Me.txt_BonoProduccion.Location = New System.Drawing.Point(261, 59)
-        Me.txt_BonoProduccion.Name = "txt_BonoProduccion"
-        Me.txt_BonoProduccion.Size = New System.Drawing.Size(219, 20)
-        Me.txt_BonoProduccion.TabIndex = 7
-        '
-        'txt_HorasExtraordinarias
-        '
-        Me.txt_HorasExtraordinarias.Location = New System.Drawing.Point(261, 85)
-        Me.txt_HorasExtraordinarias.Name = "txt_HorasExtraordinarias"
-        Me.txt_HorasExtraordinarias.Size = New System.Drawing.Size(219, 20)
-        Me.txt_HorasExtraordinarias.TabIndex = 8
-        '
-        'txt_HorasNocturnas
-        '
-        Me.txt_HorasNocturnas.Location = New System.Drawing.Point(263, 111)
-        Me.txt_HorasNocturnas.Name = "txt_HorasNocturnas"
-        Me.txt_HorasNocturnas.Size = New System.Drawing.Size(217, 20)
-        Me.txt_HorasNocturnas.TabIndex = 9
-        '
-        'ComB_CategoriaTrabajoNoc
-        '
-        Me.ComB_CategoriaTrabajoNoc.FormattingEnabled = True
-        Me.ComB_CategoriaTrabajoNoc.Location = New System.Drawing.Point(263, 137)
-        Me.ComB_CategoriaTrabajoNoc.Name = "ComB_CategoriaTrabajoNoc"
-        Me.ComB_CategoriaTrabajoNoc.Size = New System.Drawing.Size(217, 21)
-        Me.ComB_CategoriaTrabajoNoc.TabIndex = 10
-        '
-        'txt_HorasDomingos
-        '
-        Me.txt_HorasDomingos.Location = New System.Drawing.Point(263, 164)
-        Me.txt_HorasDomingos.Name = "txt_HorasDomingos"
-        Me.txt_HorasDomingos.Size = New System.Drawing.Size(217, 20)
-        Me.txt_HorasDomingos.TabIndex = 11
-        '
-        'txt_CodigoDependienteRCIVA
-        '
-        Me.txt_CodigoDependienteRCIVA.Location = New System.Drawing.Point(263, 20)
-        Me.txt_CodigoDependienteRCIVA.Name = "txt_CodigoDependienteRCIVA"
-        Me.txt_CodigoDependienteRCIVA.Size = New System.Drawing.Size(207, 20)
-        Me.txt_CodigoDependienteRCIVA.TabIndex = 5
-        '
-        'txt_TipoDocumentoRCIVA
-        '
-        Me.txt_TipoDocumentoRCIVA.Location = New System.Drawing.Point(263, 46)
-        Me.txt_TipoDocumentoRCIVA.Name = "txt_TipoDocumentoRCIVA"
-        Me.txt_TipoDocumentoRCIVA.Size = New System.Drawing.Size(207, 20)
-        Me.txt_TipoDocumentoRCIVA.TabIndex = 6
-        '
-        'ComB_NovedadesRCIVA
-        '
-        Me.ComB_NovedadesRCIVA.FormattingEnabled = True
-        Me.ComB_NovedadesRCIVA.Location = New System.Drawing.Point(263, 72)
-        Me.ComB_NovedadesRCIVA.Name = "ComB_NovedadesRCIVA"
-        Me.ComB_NovedadesRCIVA.Size = New System.Drawing.Size(207, 21)
-        Me.ComB_NovedadesRCIVA.TabIndex = 7
-        '
-        'txt_Form110
-        '
-        Me.txt_Form110.Location = New System.Drawing.Point(263, 99)
-        Me.txt_Form110.Name = "txt_Form110"
-        Me.txt_Form110.Size = New System.Drawing.Size(207, 20)
-        Me.txt_Form110.TabIndex = 8
-        '
-        'txt_SaldoRcIvaMesAnt
-        '
-        Me.txt_SaldoRcIvaMesAnt.Location = New System.Drawing.Point(362, 125)
-        Me.txt_SaldoRcIvaMesAnt.Name = "txt_SaldoRcIvaMesAnt"
-        Me.txt_SaldoRcIvaMesAnt.Size = New System.Drawing.Size(108, 20)
-        Me.txt_SaldoRcIvaMesAnt.TabIndex = 9
-        '
-        'txt_OtrosBonos
-        '
-        Me.txt_OtrosBonos.Location = New System.Drawing.Point(251, 33)
-        Me.txt_OtrosBonos.Name = "txt_OtrosBonos"
-        Me.txt_OtrosBonos.Size = New System.Drawing.Size(192, 20)
-        Me.txt_OtrosBonos.TabIndex = 9
-        '
-        'txt_ConceptoOtrosBonos
-        '
-        Me.txt_ConceptoOtrosBonos.Location = New System.Drawing.Point(251, 84)
-        Me.txt_ConceptoOtrosBonos.Name = "txt_ConceptoOtrosBonos"
-        Me.txt_ConceptoOtrosBonos.Size = New System.Drawing.Size(444, 20)
-        Me.txt_ConceptoOtrosBonos.TabIndex = 10
-        '
-        'txt_OtrosDescuentos
-        '
-        Me.txt_OtrosDescuentos.Location = New System.Drawing.Point(251, 143)
-        Me.txt_OtrosDescuentos.Name = "txt_OtrosDescuentos"
-        Me.txt_OtrosDescuentos.Size = New System.Drawing.Size(192, 20)
-        Me.txt_OtrosDescuentos.TabIndex = 11
-        '
-        'txt_ConceptoOtrosDescuentos
-        '
-        Me.txt_ConceptoOtrosDescuentos.Location = New System.Drawing.Point(251, 194)
-        Me.txt_ConceptoOtrosDescuentos.Name = "txt_ConceptoOtrosDescuentos"
-        Me.txt_ConceptoOtrosDescuentos.Size = New System.Drawing.Size(444, 20)
-        Me.txt_ConceptoOtrosDescuentos.TabIndex = 12
-        '
         'btn_Aceptar
         '
         Me.btn_Aceptar.Location = New System.Drawing.Point(1269, 12)
@@ -850,6 +869,7 @@ Partial Class UF_DATOS_ESPECIFICOS_AGREGAR
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "UF_DATOS_ESPECIFICOS_AGREGAR"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DATOS ESPECIFICOS AGREGAR TRABAJADOR"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

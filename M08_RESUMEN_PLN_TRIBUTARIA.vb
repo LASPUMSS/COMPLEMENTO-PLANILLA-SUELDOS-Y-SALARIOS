@@ -264,6 +264,7 @@
 
                 hojaPlnTrb.Activate()
 
+                .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Row - 7
                 .Cells(.Rows.Count, 3).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = GESTION
                 .Cells(.Rows.Count, 4).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = PERIODO
                 .Cells(.Rows.Count, 5).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = CODIGO_DEPENDIENTE
@@ -292,16 +293,6 @@
                 .Cells(.Rows.Count, 26).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = SALDO_A_FAVOR_DEPENDIENTE_P_MES_SGTE
 
             Next
-
-            Dim i As Long
-            i = 1
-            .Cells(8, 2).Select
-
-            Do While .ActiveCell.Offset(0, 1).Value <> ""
-                .ActiveCell.Value = i
-                .ActiveCell.Offset(1, 0).Select()
-                i = i + 1
-            Loop
 
             .Range(.Cells(8, 2), .Cells(n1, 26)).Select
             formatoTablas()

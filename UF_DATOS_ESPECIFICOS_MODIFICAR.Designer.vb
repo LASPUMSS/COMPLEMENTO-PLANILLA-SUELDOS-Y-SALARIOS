@@ -850,6 +850,7 @@ Partial Class UF_DATOS_ESPECIFICOS_MODIFICAR
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "UF_DATOS_ESPECIFICOS_MODIFICAR"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DATOS ESPECIFICOS MODIFICAR REGISTRO"
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
