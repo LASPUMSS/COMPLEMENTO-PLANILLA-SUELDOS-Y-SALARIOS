@@ -176,7 +176,8 @@
     End Sub
 
 
-    Public Sub CalculosPlnTrib(ByVal hojaPrincipalDatos As Excel.Worksheet, ByVal hojaPlnTrb As Excel.Worksheet)
+    Public Sub CalculosPlnTrib(ByVal hojaPrincipalDatos As Excel.Worksheet, ByVal hojaPlnTrb As Excel.Worksheet, ByVal SALARIO_MINIMO_NACINAL_VIGENTE_02 As String)
+
         With Globals.ThisAddIn.Application
             Dim Celda As Excel.Range
             Dim CI_BUSCADO As Excel.Range
@@ -223,7 +224,7 @@
 
 
             hojaPlnTrb.Activate()
-            .Range(.Cells(8, 9), .Cells(n1, 9)).Select
+            .Range(.Cells(8, 9), .Cells(n1, 9)).Select()
 
             For Each Celda In .Selection
 
@@ -244,19 +245,34 @@
                 TIPO_DE_DOCUMENTO = resultadoUb(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 28).Address)
                 NOVEDADES_INCORPORACION_VIGENTE_DESVINCULADO = "=IF(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & " =""INCORPORADO"",""I"","""") " &
                                                             " & IF( " & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "=""VIGENTE"",""V"","""")" &
-                                                            " & IF( " & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & " =""DESVINCULADO"",""I"","""") "
+                                                            " & IF( " & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & " =""DESVINCULADO"",""D"","""") "
 
-                DOS_SMN_NO_IMPONIBLE = "=ROUND(2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
-                IMPORTE_SUJETO_A_IMPUESTO_BASE_IMPONIBLE = "=ROUND(RC[-2]-RC[-1],0)"
-                IMPUESTO_RC_IVA = "=ROUND(RC[-1]*13%,0)"
-                FORM_110 = "=ROUND(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 30).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
-                TRECE_PORCIENTO_DE_DOS_SMN = "=ROUND(13%*2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
+                'DOS_SMN_NO_IMPONIBLE = "=ROUND(2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
+                DOS_SMN_NO_IMPONIBLE = "=IF(RC[-1]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                                "),ROUND(2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0),0)"
+                'IMPORTE_SUJETO_A_IMPUESTO_BASE_IMPONIBLE = "=ROUND(RC[-2]-RC[-1],0)"
+                IMPORTE_SUJETO_A_IMPUESTO_BASE_IMPONIBLE = "=IF(RC[-2]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                                                    "),ROUND(RC[-2]-RC[-1],0),0)"
+                'IMPUESTO_RC_IVA = "=ROUND(RC[-1]*13%,0)"
+                IMPUESTO_RC_IVA = "=IF(RC[-3]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                           "),ROUND(RC[-1]*13%,0),0)"
+                'FORM_110 = "=ROUND(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 30).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
+                FORM_110 = "=IF(RC[-4]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                    "),ROUND(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 30).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0),0)"
+                'TRECE_PORCIENTO_DE_DOS_SMN = "=ROUND(13%*2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
+                TRECE_PORCIENTO_DE_DOS_SMN = "=IF(RC[-5]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                                     "),ROUND(13%*2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0),0)"
 
                 FISCO = "=ROUND(IF(RC[-3]>(RC[-2]+RC[-1]),(RC[-3]-RC[-2]-RC[-1]),0),0)"
-                DEPENDIENTE = "=ROUND(IF((RC[-3]+RC[-2])>RC[-4],(RC[-4]-RC[-3]-RC[-2]),0),0)"
-                MES_ANTERIOR = "=ROUND(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 31).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
-                MANTENIMIENTO_DE_VALOR = "=ROUND(((" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(8, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "/" &
-                                        resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(9, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ")-1)*RC[-1],0)"
+                DEPENDIENTE = "=ROUND(IF((RC[-3]+RC[-2])>RC[-4],(RC[-3]+RC[-2]-RC[-4]),0),0)"
+                'MES_ANTERIOR = "=ROUND(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 31).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
+                MES_ANTERIOR = "=IF(RC[-8]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                        "),ROUND(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 31).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0),0)"
+                'MANTENIMIENTO_DE_VALOR = "=ROUND(((" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(8, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "/" &
+                'resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(9, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ")-1)*RC[-1],0)"
+                MANTENIMIENTO_DE_VALOR = "=IF(RC[-9]>(4*" & SALARIO_MINIMO_NACINAL_VIGENTE_02 &
+                                    "),ROUND(((" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(8, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "/" &
+                                     resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(9, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ")-1)*RC[-1],0),0)"
                 SUB_TOTAL = "=ROUND(RC[-2]+RC[-1],0)"
 
                 SALDO_TOTAL_A_FAVOR_DEL_DEPENDIENTE = "=ROUND(RC[-1]+RC[-4],0)"
@@ -296,7 +312,8 @@
 
             Next
 
-            .Range(.Cells(8, 2), .Cells(n1, 26)).Select
+            .Columns("L:Z").NumberFormat = "#,##0"
+            .Range(.Cells(8, 2), .Cells(n1, 26)).Select()
             formatoTablas()
         End With
 

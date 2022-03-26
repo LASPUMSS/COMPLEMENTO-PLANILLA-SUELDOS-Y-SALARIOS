@@ -349,7 +349,7 @@
                                                                                 "),ROUND(" & TOTAL_INGRESO_NETO_RUTA & ",0),0)"
             Next
 
-            CalculosPlnTrib(hojaPrincipalDatos, hojaResumenRC_IVA)
+            CalculosPlnTrib(hojaPrincipalDatos, hojaResumenRC_IVA, SALARIO_MINIMO_NACINAL_VIGENTE_02)
             recogerResRC_IVA(hojaPrePlanilla, hojaResumenRC_IVA)
 
             '################################################################

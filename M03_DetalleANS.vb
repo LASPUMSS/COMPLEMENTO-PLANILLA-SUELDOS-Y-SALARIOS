@@ -108,6 +108,7 @@
             .Cells(filCelInc, 1).Offset(1, 1).Value = "C.I.:"
             .Cells(filCelInc, 1).Offset(1, 1).Font.Bold = True
             .Cells(filCelInc, 1).Offset(1, 3).Value = carnet
+            .Cells(filCelInc, 1).Offset(1, 3).HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlLeft
 
             .Cells(filCelInc, 1).Offset(0, 7).Value = "TOTAL GANADO:"
             .Cells(filCelInc, 1).Offset(0, 7).Font.Bold = True
