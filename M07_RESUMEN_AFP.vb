@@ -69,6 +69,7 @@
             .Cells(4, 17).Select
             .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlToRight)).Select
             .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown)).Select
+
             With .Selection
                 .NumberFormat = "#,##0.00"
             End With
@@ -131,6 +132,7 @@
                 .Font.Size = 26
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
+                .Font.TintAndShade = 0
                 .Interior.Pattern = Microsoft.Office.Interop.Excel.Constants.xlSolid
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent1
                 .Interior.TintAndShade = -0.249977111117893
@@ -152,7 +154,7 @@
                 .WrapText = True
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
-                .Font.Size = 10
+                .Font.Size = 9
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
                 .Interior.Pattern = Microsoft.Office.Interop.Excel.Constants.xlSolid

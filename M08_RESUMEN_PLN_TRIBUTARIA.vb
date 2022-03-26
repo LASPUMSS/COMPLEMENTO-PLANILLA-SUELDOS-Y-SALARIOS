@@ -242,7 +242,9 @@
                 SEGUNDO_APELLIDO = resultadoUb(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 26).Address)
 
                 TIPO_DE_DOCUMENTO = resultadoUb(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 28).Address)
-                NOVEDADES_INCORPORACION_VIGENTE_DESVINCULADO = resultadoUb(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address)
+                NOVEDADES_INCORPORACION_VIGENTE_DESVINCULADO = "=IF(" & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & " =""INCORPORADO"",""I"","""") " &
+                                                            " & IF( " & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "=""VIGENTE"",""V"","""")" &
+                                                            " & IF( " & resultadoUb2(hojaPrincipalDatos.Name, CI_BUSCADO.Offset(0, 29).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & " =""DESVINCULADO"",""I"","""") "
 
                 DOS_SMN_NO_IMPONIBLE = "=ROUND(2*" & resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & ",0)"
                 IMPORTE_SUJETO_A_IMPUESTO_BASE_IMPONIBLE = "=ROUND(RC[-2]-RC[-1],0)"
@@ -273,7 +275,7 @@
                 .Cells(.Rows.Count, 8).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = SEGUNDO_APELLIDO
 
                 .Cells(.Rows.Count, 10).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = TIPO_DE_DOCUMENTO
-                .Cells(.Rows.Count, 11).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = NOVEDADES_INCORPORACION_VIGENTE_DESVINCULADO
+                .Cells(.Rows.Count, 11).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = NOVEDADES_INCORPORACION_VIGENTE_DESVINCULADO
 
                 .Cells(.Rows.Count, 13).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = DOS_SMN_NO_IMPONIBLE
                 .Cells(.Rows.Count, 14).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = IMPORTE_SUJETO_A_IMPUESTO_BASE_IMPONIBLE

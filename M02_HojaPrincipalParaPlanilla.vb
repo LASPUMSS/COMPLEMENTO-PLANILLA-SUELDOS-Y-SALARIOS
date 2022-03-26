@@ -113,7 +113,8 @@
                 PAIS_DE_NACIONALIDAD = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 2).Address)
                 FECHA_DE_NACIMIENTO = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 3).Address)
                 FECHA_DE_INGRESO = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 4).Address)
-                SEXO_V_M = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 5).Address)
+                SEXO_V_M = "=IF(" & resultadoUb2(hojaPrincipalDatos.Name, Celda.Offset(0, 5).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "=""VARON"",""V"","""") & " &
+                    "IF(" & resultadoUb2(hojaPrincipalDatos.Name, Celda.Offset(0, 5).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "=""MUJER"",""M"","""")"
                 OCUPACION_QUE_DESEMP = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 6).Address)
                 HORAS_PAGADAS_DIA = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 7).Address)
                 DIAS_PAGADAS_MES = resultadoUb(hojaPrincipalDatos.Name, Celda.Offset(0, 8).Address)
@@ -142,7 +143,7 @@
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 2).Value = APELLIDO_Y_NOMBRES
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 3).Value = PAIS_DE_NACIONALIDAD
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 4).Value = FECHA_DE_NACIMIENTO
-                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 5).Value = SEXO_V_M
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 5).FormulaR1C1 = SEXO_V_M
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 6).Value = OCUPACION_QUE_DESEMP
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 7).Value = FECHA_DE_INGRESO
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 8).Value = HORAS_PAGADAS_DIA
@@ -283,24 +284,26 @@
             .Range(.Cells(1, 1), .Cells(1, 2)).CurrentRegion.Select
             formatoTablas()
 
-            .Range(.Cells(4, 6), .Cells(n, 15)).Select
-            With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
+            n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
+            '.Range(.Cells(4, 6), .Cells(n, 15)).Select
+            'With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
+            With .Range(.Cells(4, 6), .Cells(n, 15))
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlRight
-                .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
+                '    '.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .NumberFormat = "#,##0.00"
             End With
 
-            .Range(.Cells(4, 1), .Cells(4, 2)).Select
-            With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
-                .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
-                .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
-            End With
+            '.Range(.Cells(4, 1), .Cells(4, 2)).Select
+            'With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
+            '    .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
+            '    '.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
+            'End With
 
-            .Range(.Cells(4, 5), .Cells(4, 5)).Select
-            With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
-                .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
-                .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
-            End With
+            '.Range(.Cells(4, 5), .Cells(4, 5)).Select
+            'With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
+            '    .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
+            '    .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
+            'End With
 
 
             n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
@@ -358,6 +361,24 @@
             CalculosAportePatronal(hojaPrePlanilla, hojaAportePatronal)
             .Cells.EntireColumn.AutoFit()
 
+
+            '################################################################
+            '#############    TEGRESAR HOJA PREPLANILLA
+            '################################################################
+
+            hojaPrePlanilla.Activate()
+            n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
+
+            .Range(.Cells(1, 18), .Cells(n, 18)).Font.Bold = True
+            .Range(.Cells(1, 18), .Cells(n, 18)).Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
+            .Range(.Cells(1, 18), .Cells(n, 18)).Interior.TintAndShade = -0.149998474074526
+
+            .Range(.Cells(1, 22), .Cells(n, 23)).Font.Bold = True
+            .Range(.Cells(1, 22), .Cells(n, 23)).Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
+            .Range(.Cells(1, 22), .Cells(n, 23)).Interior.TintAndShade = -0.149998474074526
+
+            .Columns("K:W").NumberFormat = "#,##0.00"
+            .Cells.EntireColumn.AutoFit()
         End With
     End Sub
 

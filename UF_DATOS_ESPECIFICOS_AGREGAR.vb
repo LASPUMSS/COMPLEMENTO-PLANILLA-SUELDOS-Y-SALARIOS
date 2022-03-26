@@ -10,13 +10,7 @@
                 .Cells(.Rows.Count, 4).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_PaisNacionalidad.Text
                 .Cells(.Rows.Count, 5).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_GestionNac.Text & "/" & txt_MesNac.Text & "/" & txt_DiaNac.Text
                 .Cells(.Rows.Count, 6).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_GestionIng.Text & "/" & txt_MesIng.Text & "/" & txt_DiaIng.Text
-
-                If ComB_Sexo.Text = "VARON" Then
-                    .Cells(.Rows.Count, 7).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = "V"
-                Else ComB_Sexo.Text = "MUJER"
-                    .Cells(.Rows.Count, 7).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = "M"
-                End If
-
+                .Cells(.Rows.Count, 7).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_Sexo.Text
                 .Cells(.Rows.Count, 8).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_OcuapacionQueDesp.Text
                 .Cells(.Rows.Count, 9).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasPagadas.Text
                 .Cells(.Rows.Count, 10).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_DiasPagados.Text

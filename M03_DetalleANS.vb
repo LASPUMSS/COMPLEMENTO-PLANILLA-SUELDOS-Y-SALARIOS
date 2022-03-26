@@ -575,6 +575,7 @@
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent5
                 .Interior.TintAndShade = 0.599993896298105
                 .FormulaR1C1 = "=R[-3]C*R[-4]C[4]"
+                .NumberFormat = "#,##0.00"
             End With
 
             '#############    APORTE SOLIDARIO 5%
@@ -598,6 +599,7 @@
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent5
                 .Interior.TintAndShade = 0.599993896298105
                 .FormulaR1C1 = "=R[-3]C*R[-4]C[4]"
+                .NumberFormat = "#,##0.00"
             End With
 
             '#############    APORTE SOLIDARIO 10%
@@ -621,6 +623,7 @@
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent5
                 .Interior.TintAndShade = 0.599993896298105
                 .FormulaR1C1 = "=R[-3]C*R[-4]C[4]"
+                .NumberFormat = "#,##0.00"
             End With
 
             '#######################################################
