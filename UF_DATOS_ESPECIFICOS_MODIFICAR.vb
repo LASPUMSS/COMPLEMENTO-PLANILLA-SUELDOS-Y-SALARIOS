@@ -15,6 +15,35 @@
             Next
 
         End With
+
+        ComB_CorrespondeBonoFronteras.Items.Clear()
+        ComB_CorrespondeBonoFronteras.Items.Add("CORRESPONDE")
+        ComB_CorrespondeBonoFronteras.Items.Add("NO CORRESPONDE")
+
+        ComB_CategoriaTrabajoNoc.Items.Clear()
+        ComB_CategoriaTrabajoNoc.Items.Add("RECARGO NOCTURNO")
+        ComB_CategoriaTrabajoNoc.Items.Add("HOMBRES ADMINISTRATIVOS")
+        ComB_CategoriaTrabajoNoc.Items.Add("OBREROS")
+        ComB_CategoriaTrabajoNoc.Items.Add("MUJERES O MENOR 18")
+        ComB_CategoriaTrabajoNoc.Items.Add("TRABAJADORES DE ALTO RIESGO")
+
+        ComB_DominicalOcupacion.Items.Clear()
+        ComB_DominicalOcupacion.Items.Add("ADMINISTRACION")
+        ComB_DominicalOcupacion.Items.Add("OBRERO")
+
+        ComB_LlegoPuntual.Items.Clear()
+        ComB_LlegoPuntual.Items.Add("LLEGO PUNTUAL")
+        ComB_LlegoPuntual.Items.Add("NO LLEGO PUNTUAL")
+
+        ComB_NovedadesRCIVA.Items.Clear()
+        ComB_NovedadesRCIVA.Items.Add("INCORPORACION")
+        ComB_NovedadesRCIVA.Items.Add("VIGENTE")
+        ComB_NovedadesRCIVA.Items.Add("DESVINCULADO")
+
+        ComB_Sexo.Items.Clear()
+        ComB_Sexo.Items.Add("VARON")
+        ComB_Sexo.Items.Add("MUJER")
+
     End Sub
 
     Private Sub ComB_CI_TextChanged(sender As Object, e As EventArgs) Handles ComB_CI.TextChanged
@@ -148,5 +177,29 @@
                 End If
             Next
         End With
+    End Sub
+
+    Private Sub ComB_DominicalOcupacion_TextChanged(sender As Object, e As EventArgs) Handles ComB_DominicalOcupacion.TextChanged
+        If ComB_DominicalOcupacion.Text = "OBRERO" And ComB_LlegoPuntual.Text = "LLEGO PUNTUAL" Then
+            txt_CorrespondeDominical.ReadOnly = False
+            txt_CorrespondeDominical.Text = "CORRESPONDE"
+            txt_CorrespondeDominical.ReadOnly = True
+        Else
+            txt_CorrespondeDominical.ReadOnly = False
+            txt_CorrespondeDominical.Text = "NO CORRESPONDE"
+            txt_CorrespondeDominical.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub ComB_LlegoPuntual_TextChanged(sender As Object, e As EventArgs) Handles ComB_LlegoPuntual.TextChanged
+        If ComB_DominicalOcupacion.Text = "OBRERO" And ComB_LlegoPuntual.Text = "LLEGO PUNTUAL" Then
+            txt_CorrespondeDominical.ReadOnly = False
+            txt_CorrespondeDominical.Text = "CORRESPONDE"
+            txt_CorrespondeDominical.ReadOnly = True
+        Else
+            txt_CorrespondeDominical.ReadOnly = False
+            txt_CorrespondeDominical.Text = "NO CORRESPONDE"
+            txt_CorrespondeDominical.ReadOnly = True
+        End If
     End Sub
 End Class

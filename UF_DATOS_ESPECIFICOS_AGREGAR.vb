@@ -10,38 +10,44 @@
                 .Cells(.Rows.Count, 4).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_PaisNacionalidad.Text
                 .Cells(.Rows.Count, 5).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_GestionNac.Text & "/" & txt_MesNac.Text & "/" & txt_DiaNac.Text
                 .Cells(.Rows.Count, 6).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_GestionIng.Text & "/" & txt_MesIng.Text & "/" & txt_DiaIng.Text
-                .Cells(.Rows.Count, 7).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_Sexo.Text
+
+                If ComB_Sexo.Text = "VARON" Then
+                    .Cells(.Rows.Count, 7).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = "V"
+                ElseIf ComB_Sexo.Text = "MUJER" Then
+                    .Cells(.Rows.Count, 7).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = "M"
+                End If
+
                 .Cells(.Rows.Count, 8).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_OcuapacionQueDesp.Text
-                .Cells(.Rows.Count, 9).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasPagadas.Text
-                .Cells(.Rows.Count, 10).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_DiasPagados.Text
-                .Cells(.Rows.Count, 11).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HaberBasico.Text
-                .Cells(.Rows.Count, 12).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_BonoProduccion.Text
-                .Cells(.Rows.Count, 13).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=IF(RC[1]=""CORRESPONDE"",RC[-2]*25%,0)"
-                .Cells(.Rows.Count, 14).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_CorrespondeBonoFronteras.Text
-                .Cells(.Rows.Count, 15).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasExtraordinarias.Text
-                .Cells(.Rows.Count, 16).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasNocturnas.Text
-                .Cells(.Rows.Count, 17).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_CategoriaTrabajoNoc.Text
-                .Cells(.Rows.Count, 18).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasDomingos.Text
-                .Cells(.Rows.Count, 19).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=IF(AND(RC[1]=""OBRERO"",RC[2]=""LLEGO PUNTUAL""),""CUMPLE"",""NO CUMPLE"")"
-                .Cells(.Rows.Count, 20).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_DominicalOcupacion.Text
-                .Cells(.Rows.Count, 21).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_LlegoPuntual.Text
-                .Cells(.Rows.Count, 22).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_OtrosBonos.Text
-                .Cells(.Rows.Count, 23).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ConceptoOtrosBonos.Text
-                .Cells(.Rows.Count, 24).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_OtrosDescuentos.Text
-                .Cells(.Rows.Count, 25).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ConceptoOtrosDescuentos.Text
-                .Cells(.Rows.Count, 26).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_NombreTrabajador.Text
-                .Cells(.Rows.Count, 27).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ApellidoPat.Text
-                .Cells(.Rows.Count, 28).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ApellidoMat.Text
-                .Cells(.Rows.Count, 29).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_CodigoDependienteRCIVA.Text
-                .Cells(.Rows.Count, 30).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_TipoDocumentoRCIVA.Text
-                .Cells(.Rows.Count, 31).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_NovedadesRCIVA.Text
-                .Cells(.Rows.Count, 32).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_Form110.Text
-                .Cells(.Rows.Count, 33).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_SaldoRcIvaMesAnt.Text
+                    .Cells(.Rows.Count, 9).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasPagadas.Text
+                    .Cells(.Rows.Count, 10).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_DiasPagados.Text
+                    .Cells(.Rows.Count, 11).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HaberBasico.Text
+                    .Cells(.Rows.Count, 12).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_BonoProduccion.Text
+                    .Cells(.Rows.Count, 13).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=IF(RC[1]=""CORRESPONDE"",RC[-2]*25%,0)"
+                    .Cells(.Rows.Count, 14).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_CorrespondeBonoFronteras.Text
+                    .Cells(.Rows.Count, 15).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasExtraordinarias.Text
+                    .Cells(.Rows.Count, 16).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasNocturnas.Text
+                    .Cells(.Rows.Count, 17).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_CategoriaTrabajoNoc.Text
+                    .Cells(.Rows.Count, 18).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_HorasDomingos.Text
+                    .Cells(.Rows.Count, 19).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=IF(AND(RC[1]=""OBRERO"",RC[2]=""LLEGO PUNTUAL""),""CUMPLE"",""NO CUMPLE"")"
+                    .Cells(.Rows.Count, 20).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_DominicalOcupacion.Text
+                    .Cells(.Rows.Count, 21).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_LlegoPuntual.Text
+                    .Cells(.Rows.Count, 22).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_OtrosBonos.Text
+                    .Cells(.Rows.Count, 23).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ConceptoOtrosBonos.Text
+                    .Cells(.Rows.Count, 24).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_OtrosDescuentos.Text
+                    .Cells(.Rows.Count, 25).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ConceptoOtrosDescuentos.Text
+                    .Cells(.Rows.Count, 26).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_NombreTrabajador.Text
+                    .Cells(.Rows.Count, 27).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ApellidoPat.Text
+                    .Cells(.Rows.Count, 28).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_ApellidoMat.Text
+                    .Cells(.Rows.Count, 29).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_CodigoDependienteRCIVA.Text
+                    .Cells(.Rows.Count, 30).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_TipoDocumentoRCIVA.Text
+                    .Cells(.Rows.Count, 31).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = ComB_NovedadesRCIVA.Text
+                    .Cells(.Rows.Count, 32).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_Form110.Text
+                    .Cells(.Rows.Count, 33).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_SaldoRcIvaMesAnt.Text
 
-                UF_DATOS_ESPECIFICOS_AGREGAR.ActiveForm.Close()
+                    UF_DATOS_ESPECIFICOS_AGREGAR.ActiveForm.Close()
 
-            Else
-                MsgBox("DEBE COMPLETAR TODOS LOS CAMPOS DEL FORMULARIO", MsgBoxStyle.Exclamation)
+                Else
+                    MsgBox("DEBE COMPLETAR TODOS LOS CAMPOS DEL FORMULARIO", MsgBoxStyle.Exclamation)
             End If
         End With
     End Sub

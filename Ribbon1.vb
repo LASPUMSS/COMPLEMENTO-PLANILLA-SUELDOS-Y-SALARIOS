@@ -76,7 +76,17 @@ Public Class Ribbon1
         End With
     End Sub
     Public Sub btn_GenerarPlanillaSueldosSalarios(Control As Office.IRibbonControl)
-        hojaPrinciplaPlanillaSueldosSalarios()
+
+        With Globals.ThisAddIn.Application
+            If .Cells(1, 1).Value = "ELABORACIÓN DE PLANILLA DE SUELDOS Y SALARIOS" And
+                .Cells(2, 1).Value = "DATOS GENERALES" And
+                .Cells(15, 1).Value = "DATOS ESPECIFICOS" Then
+
+                hojaPrinciplaPlanillaSueldosSalarios()
+            Else
+                MsgBox("LA HOJA ACTUAL NO ES LA ADECUADA PARA INTRODUCIR LOS DATOS. GENERE UN HOJA PRINCIPAL PARA EJECUTAR ESTE PROCEDIMIENTO.", MsgBoxStyle.Exclamation)
+            End If
+        End With
     End Sub
 #Region "Devoluciones de llamada de la cinta de opciones"
     'Cree métodos de devolución de llamada aquí. Para obtener más información sobre la adición de métodos de devolución de llamada, visite https://go.microsoft.com/fwlink/?LinkID=271226

@@ -6,6 +6,7 @@
     Public hojaDomTrabDomDetallado As Excel.Worksheet
     Public hojaResumenAFP As Excel.Worksheet
     Public hojaResumenRC_IVA As Excel.Worksheet
+    Public hojaAportePatronal As Excel.Worksheet
 
     Public Sub hojaPrinciplaPlanillaSueldosSalarios()
         With Globals.ThisAddIn.Application
@@ -84,6 +85,9 @@
 
             .Sheets.Add()
             hojaResumenRC_IVA = .ActiveSheet
+
+            .Sheets.Add()
+            hojaAportePatronal = .ActiveSheet
 
             hojaPrincipalDatos.Activate()
 
@@ -312,7 +316,6 @@
             '################################################################
 
             Dim CI_PRE_PLANILLA As String
-            'Dim TOTAL_INGRESO_NETO_VALOR As Long
             Dim TOTAL_INGRESO_NETO_RUTA As String
 
             '########################################################################
@@ -345,6 +348,15 @@
 
             CalculosPlnTrib(hojaPrincipalDatos, hojaResumenRC_IVA)
             recogerResRC_IVA(hojaPrePlanilla, hojaResumenRC_IVA)
+
+            '################################################################
+            '#############    APORTE PATRONAL
+            '################################################################
+
+            hojaAportePatronal.Activate()
+            plantillaResumenAportePatronal()
+            CalculosAportePatronal(hojaPrePlanilla, hojaAportePatronal)
+            .Cells.EntireColumn.AutoFit()
 
         End With
     End Sub

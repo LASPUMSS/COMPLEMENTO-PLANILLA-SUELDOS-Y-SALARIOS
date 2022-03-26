@@ -190,6 +190,7 @@
     <Compile Include="M06_DetalleHorasExtraordinarias.vb" />
     <Compile Include="M07_RESUMEN_AFP.vb" />
     <Compile Include="M08_RESUMEN_PLN_TRIBUTARIA.vb" />
+    <Compile Include="M09_RESUMEN_APORTE_PATRONAL.vb" />
     <Compile Include="Ribbon1.vb" />
     <Compile Include="ThisAddIn.vb">
       <SubType>Code</SubType>
