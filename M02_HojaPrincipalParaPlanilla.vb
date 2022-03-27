@@ -166,6 +166,8 @@
 
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11).Value = TOTAL_BONO_ANTIGUEDAD
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11), Address:="", SubAddress:=vinculoX(hojaBonoAntDetallado))
+                hojaPrePlanilla.Activate()
 
                 '########################################################################
                 '#############    SECCIÓN BONO DE PRODUCCIÓN
@@ -198,6 +200,8 @@
                 TOTAL_HORAS_EXTR_NOCT = resultadoExtNoc(hojaExtNoctDetallado.Name)
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14).Value = TOTAL_HORAS_EXTR_NOCT
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14), Address:="", SubAddress:=vinculoX(hojaExtNoctDetallado))
+                hojaPrePlanilla.Activate()
 
                 '########################################################################
                 '#############    SECCIÓN PAGO DOMICAL Y HORAS DOMINGOS TRABAJADOS
@@ -219,13 +223,14 @@
                 TOTAL_DOMINICAL_DOMIG_TRAB = resultadoDomTrbDom(hojaDomTrabDomDetallado.Name)
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15).Value = TOTAL_DOMINICAL_DOMIG_TRAB
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15), Address:="", SubAddress:=vinculoX(hojaDomTrabDomDetallado))
+                hojaPrePlanilla.Activate()
 
                 '########################################################################
                 '#############    SECCIÓN OTROS BONOS
                 '########################################################################
 
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 16).Value = OTROS_BONOS
-
 
                 '########################################################################
                 '#############    SECCIÓN TOTAL GANADO
@@ -280,35 +285,27 @@
 
             Next
 
+            'DAR FORMATO A LA PLANILLA DE AFP
             hojaANS()
             .Range(.Cells(1, 1), .Cells(1, 2)).CurrentRegion.Select
             formatoTablas()
-
             n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
-            '.Range(.Cells(4, 6), .Cells(n, 15)).Select
-            'With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
             With .Range(.Cells(4, 6), .Cells(n, 15))
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlRight
-                '    '.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .NumberFormat = "#,##0.00"
             End With
-
-            '.Range(.Cells(4, 1), .Cells(4, 2)).Select
-            'With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
-            '    .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
-            '    '.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
-            'End With
-
-            '.Range(.Cells(4, 5), .Cells(4, 5)).Select
-            'With .Range(.Selection, .Selection.End(Microsoft.Office.Interop.Excel.XlDirection.xlDown))
-            '    .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
-            '    .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
-            'End With
-
+            With .Range(.Cells(4, 4), .Cells(n, 4))
+                .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlRight
+                .NumberFormat = "#,##0.00"
+            End With
+            With .Range(.Cells(4, 5), .Cells(n, 5))
+                .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
+            End With
 
             n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
             .Range(.Cells(4, 15), .Cells(n, 15)).Select
 
+            'LLEVAR LOS RESULTADOS DE PLANILLA AFP A LA PREPLANILLA
             For Each Celda In .Selection
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 19).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = resultadoUb(hojaResumenAFP.Name, Celda.Address)
@@ -359,11 +356,13 @@
             hojaAportePatronal.Activate()
             plantillaResumenAportePatronal()
             CalculosAportePatronal(hojaPrePlanilla, hojaAportePatronal)
+            CopiarResulatadosAportePatronal(hojaPrePlanilla, hojaAportePatronal)
+
             .Cells.EntireColumn.AutoFit()
 
 
             '################################################################
-            '#############    TEGRESAR HOJA PREPLANILLA
+            '#############    REGRESAR HOJA PREPLANILLA
             '################################################################
 
             hojaPrePlanilla.Activate()
@@ -379,6 +378,7 @@
 
             .Columns("K:W").NumberFormat = "#,##0.00"
             .Cells.EntireColumn.AutoFit()
+            .Cells.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
         End With
     End Sub
 
@@ -442,31 +442,46 @@
             .Cells(1, 24).Value = "(14) Firma"
             .Cells(1, 24).Font.Bold = True
 
+            .Cells(1, 27).Value = "Aporte Patronal"
+            .Cells(1, 27).Font.Bold = True
+            .Cells(1, 28).Value = "Beneficios Sociales"
+            .Cells(1, 28).Font.Bold = True
+            .Cells(1, 29).Value = "Costo Total Por Trabajador"
+            .Cells(1, 29).Font.Bold = True
 
-            .Columns("A:A").ColumnWidth = 2.29
-            .Columns("B:B").ColumnWidth = 16
-            .Columns("C:C").ColumnWidth = 38
-            .Columns("D:D").ColumnWidth = 12.57
-            .Columns("E:E").ColumnWidth = 9
-            .Columns("F:F").ColumnWidth = 4.29
-            .Columns("G:G").ColumnWidth = 15
-            .Columns("H:H").ColumnWidth = 9
-            .Columns("I:I").ColumnWidth = 6
-            .Columns("J:J").ColumnWidth = 6
-            .Columns("K:K").ColumnWidth = 7
-            .Columns("L:L").ColumnWidth = 9
-            .Columns("M:M").ColumnWidth = 7
-            .Columns("N:N").ColumnWidth = 7
-            .Columns("O:O").ColumnWidth = 7
-            .Columns("P:P").ColumnWidth = 7
-            .Columns("Q:Q").ColumnWidth = 7
-            .Columns("R:R").ColumnWidth = 10
-            .Columns("S:S").ColumnWidth = 7
-            .Columns("T:T").ColumnWidth = 7
-            .Columns("U:U").ColumnWidth = 7
-            .Columns("V:V").ColumnWidth = 10
-            .Columns("W:W").ColumnWidth = 10
-            .Columns("X:X").ColumnWidth = 12
+            .Cells(1, 30).Value = "Lo que el Estado le retiene al trabajador"
+            .Cells(1, 30).Font.Bold = True
+            .Cells(1, 31).Value = "Lo que le corresponde al trabajador incluyendo beneficios sociales"
+            .Cells(1, 31).Font.Bold = True
+            .Cells(1, 32).Value = "% De lo que el Estado retiene al trabajador"
+            .Cells(1, 32).Font.Bold = True
+            .Cells(1, 33).Value = "% De lo que le corresponde al trabajador incluyendo beneficios sociales"
+            .Cells(1, 33).Font.Bold = True
+
+            '.Columns("A:A").ColumnWidth = 2.29
+            '.Columns("B:B").ColumnWidth = 16
+            '.Columns("C:C").ColumnWidth = 38
+            '.Columns("D:D").ColumnWidth = 12.57
+            '.Columns("E:E").ColumnWidth = 9
+            '.Columns("F:F").ColumnWidth = 4.29
+            '.Columns("G:G").ColumnWidth = 15
+            '.Columns("H:H").ColumnWidth = 9
+            '.Columns("I:I").ColumnWidth = 6
+            '.Columns("J:J").ColumnWidth = 6
+            '.Columns("K:K").ColumnWidth = 7
+            '.Columns("L:L").ColumnWidth = 9
+            '.Columns("M:M").ColumnWidth = 7
+            '.Columns("N:N").ColumnWidth = 7
+            '.Columns("O:O").ColumnWidth = 7
+            '.Columns("P:P").ColumnWidth = 7
+            '.Columns("Q:Q").ColumnWidth = 7
+            '.Columns("R:R").ColumnWidth = 10
+            '.Columns("S:S").ColumnWidth = 7
+            '.Columns("T:T").ColumnWidth = 7
+            '.Columns("U:U").ColumnWidth = 7
+            '.Columns("V:V").ColumnWidth = 10
+            '.Columns("W:W").ColumnWidth = 10
+            '.Columns("X:X").ColumnWidth = 12
         End With
     End Sub
 
@@ -524,5 +539,10 @@
         resultadoUb2 = nombreHojaUb & "!" & celdaUb
 
     End Function
-
+    Public Function vinculoX(ByVal nombreHojaInformeDetallado As Excel.Worksheet) As String
+        With Globals.ThisAddIn.Application
+            nombreHojaInformeDetallado.Activate()
+            Return "=" & nombreHojaInformeDetallado.Name & "!" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Address
+        End With
+    End Function
 End Module

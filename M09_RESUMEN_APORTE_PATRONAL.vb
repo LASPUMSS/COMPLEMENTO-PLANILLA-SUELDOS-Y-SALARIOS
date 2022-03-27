@@ -133,7 +133,39 @@
             .Range(.Cells(7, 5), .Cells(n, 13)).NumberFormat = "#,##0.00"
             .Range(.Cells(7, 2), .Cells(n, 13)).Select()
             formatoTablas()
-            .Cells(7, 2).Select
+            .Cells(7, 2).Select()
+        End With
+    End Sub
+
+    Public Sub CopiarResulatadosAportePatronal(ByVal hojaPrePlanilla As Excel.Worksheet, ByVal hojaAportePatronal As Excel.Worksheet)
+        With Globals.ThisAddIn.Application
+
+            Dim n As Long
+            Dim Celda As Excel.Range
+
+            hojaAportePatronal.Activate()
+
+            n = .Cells(.Rows.Count, 10).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
+            .Range(.Cells(7, 10), .Cells(n, 10)).Select()
+
+            For Each Celda In .Selection
+
+                hojaPrePlanilla.Activate()
+                .Cells(.Rows.Count, 27).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = resultadoUb(hojaAportePatronal.Name, Celda.Address)
+                .Cells(.Rows.Count, 28).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = resultadoUb(hojaAportePatronal.Name, Celda.Offset(0, 3).Address)
+                .Cells(.Rows.Count, 29).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=RC[-2]+RC[-1]+RC[-11]"
+                .Cells(.Rows.Count, 30).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=RC[-11]+RC[-10]+RC[-3]"
+                .Cells(.Rows.Count, 31).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=RC[-2]-RC[-1]"
+                .Cells(.Rows.Count, 32).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=RC[-2]/RC[-3]"
+                .Cells(.Rows.Count, 33).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).FormulaR1C1 = "=RC[-2]/RC[-4]"
+
+            Next
+
+            .Cells(1, 27).CurrentRegion.Select()
+            .Selection.NumberFormat = "#,##0.00"
+            formatoTablas()
+            .Columns("AF:AG").Style = "Percent"
+
         End With
     End Sub
 

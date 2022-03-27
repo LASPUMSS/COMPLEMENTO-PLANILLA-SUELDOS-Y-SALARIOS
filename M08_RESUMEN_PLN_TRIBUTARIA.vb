@@ -233,7 +233,7 @@
                 Dim CI_HOJA_PLN_TRB As String
                 CI_HOJA_PLN_TRB = Celda.Value
 
-                CI_BUSCADO = .Range(.Cells(17, 2), .Cells(n2, 2)).Find(CI_HOJA_PLN_TRB)
+                CI_BUSCADO = .Range(.Cells(16, 2), .Cells(n2, 2)).Find(CI_HOJA_PLN_TRB)
 
                 GESTION = resultadoUb(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(4, 0).Address)
                 PERIODO = resultadoUb(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(5, 0).Address)
@@ -313,6 +313,7 @@
             Next
 
             .Columns("L:Z").NumberFormat = "#,##0"
+            .Columns("B:K").HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
             .Range(.Cells(8, 2), .Cells(n1, 26)).Select()
             formatoTablas()
         End With
