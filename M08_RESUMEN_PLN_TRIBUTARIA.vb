@@ -1,7 +1,8 @@
 ﻿Module M08_RESUMEN_PLN_TRIBUTARIA
-    Public Sub plantillaResumenPlnTrib()
+    Public Sub plantillaResumenPlnTrib(ByVal gestionPlanilla As Long, ByVal mesPlanilla As Integer)
         With Globals.ThisAddIn.Application
-            .Cells(1, 1).Value = "PLANILLA DE RETENCIONES DEL RC-IVA CORRESPONDIENTE AL MES DE JULIO DEL 2020"
+
+            .Cells(1, 1).Value = "PLANILLA DE RETENCIONES DEL RC-IVA CORRESPONDIENTE AL MES DE " & mesTexto(mesPlanilla) & " DEL " & CStr(gestionPlanilla)
             .Cells(2, 1).Value = "(EXPRESADO EN BOLIVIANOS)"
 
             .Cells(4, 19).Value = "SALDO A FAVOR"
@@ -69,7 +70,7 @@
             .Cells(7, 26).Value = "-"
 
             With .Range(.Cells(1, 1), .Cells(1, 27))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Size = 48
@@ -79,7 +80,7 @@
             End With
 
             With .Range(.Cells(2, 1), .Cells(2, 27))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Size = 26
@@ -130,16 +131,16 @@
                 .Font.Size = 9
             End With
 
-            .Range(.Cells(4, 18), .Cells(4, 19)).Select
+            .Range(.Cells(4, 18), .Cells(4, 19)).Select()
             .Selection.Merge
             formatoTablas()
 
-            .Range(.Cells(4, 20), .Cells(4, 22)).Select
+            .Range(.Cells(4, 20), .Cells(4, 22)).Select()
             .Selection.Merge
             formatoTablas()
 
 
-            .Range(.Cells(5, 2), .Cells(7, 26)).Select
+            .Range(.Cells(5, 2), .Cells(7, 26)).Select()
             formatoTablas()
 
             .Rows("7:7").RowHeight = 40

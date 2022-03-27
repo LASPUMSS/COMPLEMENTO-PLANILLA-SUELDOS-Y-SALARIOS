@@ -58,4 +58,41 @@
 
         Return diasMes
     End Function
+
+    Public Function mesTexto(ByVal mesPlanilla As Integer) As String
+
+        Dim mesCorrespondiente As String
+        mesCorrespondiente = "XXXX"
+
+        If mesPlanilla = 1 Then
+            mesCorrespondiente = "ENERO"
+        ElseIf mesPlanilla = 2 Then
+            mesCorrespondiente = "FEBRERO"
+        ElseIf mesPlanilla = 3 Then
+            mesCorrespondiente = "MARZO"
+        ElseIf mesPlanilla = 4 Then
+            mesCorrespondiente = "ABRIL"
+        ElseIf mesPlanilla = 5 Then
+            mesCorrespondiente = "MAYO"
+        ElseIf mesPlanilla = 6 Then
+            mesCorrespondiente = "JUNIO"
+        ElseIf mesPlanilla = 7 Then
+            mesCorrespondiente = "JULIO"
+        ElseIf mesPlanilla = 8 Then
+            mesCorrespondiente = "AGOSTO"
+        ElseIf mesPlanilla = 9 Then
+            mesCorrespondiente = "SEPTIEMBRE"
+        ElseIf mesPlanilla = 10 Then
+            mesCorrespondiente = "OCTUBRE"
+        ElseIf mesPlanilla = 11 Then
+            mesCorrespondiente = "NOVIEMBRE"
+        ElseIf mesPlanilla = 12 Then
+            mesCorrespondiente = "DICIEMBRE"
+        Else
+            mesCorrespondiente = "XXXX"
+        End If
+
+        Return mesCorrespondiente
+
+    End Function
 End Module

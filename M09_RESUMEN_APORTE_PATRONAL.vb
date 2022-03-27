@@ -1,11 +1,11 @@
 ﻿Module M09_RESUMEN_APORTE_PATRONAL
-    Public Sub plantillaResumenAportePatronal()
+    Public Sub plantillaResumenAportePatronal(ByVal gestionPlanilla As Long, ByVal mesPlanilla As Integer)
         With Globals.ThisAddIn.Application
 
             .DisplayAlerts = False
 
             .Cells(1, 1).Value = "PLANILLA DE APORTES PATRONALES Y BENEFICIOS SOCIALES"
-            .Cells(2, 1).Value = "CORRESPONDIENTE AL MES DE ENERO DE 2021"
+            .Cells(2, 1).Value = "CORRESPONDIENTE AL MES DE " & mesTexto(mesPlanilla) & " DE " & CStr(gestionPlanilla)
             .Cells(3, 1).Value = "(EXPRESADO EN BOLIVIANOS)"
 
             With .Range(.Cells(1, 1), .Cells(1, 14))

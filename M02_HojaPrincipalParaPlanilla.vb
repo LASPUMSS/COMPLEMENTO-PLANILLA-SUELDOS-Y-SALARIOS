@@ -28,7 +28,9 @@
             Dim NUMERO_IDENTIFICADOR_MINISTERIO_TRABAJO As String
             Dim NUMERO_DE_EMPLEADOR_CAJA_DE_SALUD As String
             Dim GESTION_PLANILLA As String
+            Dim GESTION_PLANILLA_VALOR As Long
             Dim MES_PLANILLA As String
+            Dim MES_PLANILLA_VALOR As Integer
             Dim DIA_PLANILLA As String
             Dim SALARIO_MINIMO_NACINAL_VIGENTE As String
             Dim SALARIO_MINIMO_NACINAL_VIGENTE_02 As String
@@ -103,7 +105,9 @@
                 NUMERO_IDENTIFICADOR_MINISTERIO_TRABAJO = resultadoUb(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(2, 0).Address)
                 NUMERO_DE_EMPLEADOR_CAJA_DE_SALUD = resultadoUb(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(3, 0).Address)
                 GESTION_PLANILLA = resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(4, 0).Address)
+                GESTION_PLANILLA_VALOR = CInt(.Cells(4, 8).Offset(4, 0).Value)
                 MES_PLANILLA = resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(5, 0).Address)
+                MES_PLANILLA_VALOR = CInt(.Cells(4, 8).Offset(5, 0).Value)
                 DIA_PLANILLA = resultadoUb2(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(6, 0).Address)
                 SALARIO_MINIMO_NACINAL_VIGENTE = resultadoUb(hojaPrincipalDatos.Name, .Cells(4, 8).Offset(7, 0).Address)
 
@@ -338,7 +342,7 @@
                 TOTAL_INGRESO_NETO_RUTA = resultadoUb2(hojaPrePlanilla.Name, Celda.Offset(0, 16).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1)) & "-" & resultadoUb2(hojaPrePlanilla.Name, Celda.Offset(0, 17).Address(ReferenceStyle:=Microsoft.Office.Interop.Excel.XlReferenceStyle.xlR1C1))
 
                 hojaResumenRC_IVA.Activate()
-                plantillaResumenPlnTrib()
+                plantillaResumenPlnTrib(GESTION_PLANILLA_VALOR, MES_PLANILLA_VALOR)
 
                 hojaResumenRC_IVA.Activate()
                 .Cells(.Rows.Count, 9).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = CI_PRE_PLANILLA
@@ -354,7 +358,7 @@
             '################################################################
 
             hojaAportePatronal.Activate()
-            plantillaResumenAportePatronal()
+            plantillaResumenAportePatronal(GESTION_PLANILLA_VALOR, MES_PLANILLA_VALOR)
             CalculosAportePatronal(hojaPrePlanilla, hojaAportePatronal)
             CopiarResulatadosAportePatronal(hojaPrePlanilla, hojaAportePatronal)
 
