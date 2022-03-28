@@ -3,6 +3,7 @@
         With Globals.ThisAddIn.Application
 
             .Sheets.Add()
+            .Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
 
             .Cells(1, 1).Value = "ELABORACIÓN DE PLANILLA DE SUELDOS Y SALARIOS"
             With .Range(.Cells(1, 1), .Cells(1, 33))

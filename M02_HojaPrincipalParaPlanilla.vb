@@ -211,7 +211,6 @@
                 '#############    SECCIÓN PAGO DOMICAL Y HORAS DOMINGOS TRABAJADOS
                 '########################################################################
 
-
                 hojaDomTrabDomDetallado.Activate()
                 detalleDominicalDomTrab(DOCUMENTO_DE_IDENTIDAD,
                                 APELLIDO_Y_NOMBRES,
@@ -369,8 +368,10 @@
             '#############    REGRESAR HOJA PREPLANILLA
             '################################################################
 
+            SumasToalesGeneral(hojaPrePlanilla, hojaResumenAFP, hojaResumenRC_IVA, hojaAportePatronal)
+
             hojaPrePlanilla.Activate()
-            n = .Cells(.Rows.Count, 2).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
+            n = .Cells(.Rows.Count, 18).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row
 
             .Range(.Cells(1, 18), .Cells(n, 18)).Font.Bold = True
             .Range(.Cells(1, 18), .Cells(n, 18)).Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -380,9 +381,21 @@
             .Range(.Cells(1, 22), .Cells(n, 23)).Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
             .Range(.Cells(1, 22), .Cells(n, 23)).Interior.TintAndShade = -0.149998474074526
 
+            .Range(.Cells(1, 29), .Cells(n, 29)).Font.Bold = True
+            .Range(.Cells(1, 29), .Cells(n, 29)).Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
+            .Range(.Cells(1, 29), .Cells(n, 29)).Interior.TintAndShade = -0.149998474074526
+
             .Columns("K:W").NumberFormat = "#,##0.00"
+            .Columns("AF:AG").Style = "Percent"
             .Cells.EntireColumn.AutoFit()
             .Cells.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
+
+            With .ActiveWindow
+                .SplitColumn = 0
+                .SplitRow = 1
+            End With
+            .ActiveWindow.FreezePanes = True
+
         End With
     End Sub
 
@@ -462,30 +475,6 @@
             .Cells(1, 33).Value = "% De lo que le corresponde al trabajador incluyendo beneficios sociales"
             .Cells(1, 33).Font.Bold = True
 
-            '.Columns("A:A").ColumnWidth = 2.29
-            '.Columns("B:B").ColumnWidth = 16
-            '.Columns("C:C").ColumnWidth = 38
-            '.Columns("D:D").ColumnWidth = 12.57
-            '.Columns("E:E").ColumnWidth = 9
-            '.Columns("F:F").ColumnWidth = 4.29
-            '.Columns("G:G").ColumnWidth = 15
-            '.Columns("H:H").ColumnWidth = 9
-            '.Columns("I:I").ColumnWidth = 6
-            '.Columns("J:J").ColumnWidth = 6
-            '.Columns("K:K").ColumnWidth = 7
-            '.Columns("L:L").ColumnWidth = 9
-            '.Columns("M:M").ColumnWidth = 7
-            '.Columns("N:N").ColumnWidth = 7
-            '.Columns("O:O").ColumnWidth = 7
-            '.Columns("P:P").ColumnWidth = 7
-            '.Columns("Q:Q").ColumnWidth = 7
-            '.Columns("R:R").ColumnWidth = 10
-            '.Columns("S:S").ColumnWidth = 7
-            '.Columns("T:T").ColumnWidth = 7
-            '.Columns("U:U").ColumnWidth = 7
-            '.Columns("V:V").ColumnWidth = 10
-            '.Columns("W:W").ColumnWidth = 10
-            '.Columns("X:X").ColumnWidth = 12
         End With
     End Sub
 

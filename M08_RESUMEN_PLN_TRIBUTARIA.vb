@@ -145,34 +145,7 @@
 
             .Rows("7:7").RowHeight = 40
 
-            .Columns("A:A").ColumnWidth = 9
-            .Columns("B:B").ColumnWidth = 7
-            .Columns("C:C").ColumnWidth = 10
-            .Columns("D:D").ColumnWidth = 15
-            .Columns("E:E").ColumnWidth = 15
-            .Columns("F:F").ColumnWidth = 15
-            .Columns("G:G").ColumnWidth = 15
-            .Columns("H:H").ColumnWidth = 15
-            .Columns("I:I").ColumnWidth = 15
-            .Columns("J:J").ColumnWidth = 15
-            .Columns("K:K").ColumnWidth = 15
-            .Columns("L:L").ColumnWidth = 15
-            .Columns("M:M").ColumnWidth = 15
-            .Columns("N:N").ColumnWidth = 15
-            .Columns("O:O").ColumnWidth = 15
-            .Columns("P:P").ColumnWidth = 15
-            .Columns("Q:Q").ColumnWidth = 15
-            .Columns("R:R").ColumnWidth = 15
-            .Columns("S:S").ColumnWidth = 15
-            .Columns("T:T").ColumnWidth = 15
-            .Columns("U:U").ColumnWidth = 15
-            .Columns("V:V").ColumnWidth = 15
-            .Columns("W:W").ColumnWidth = 15
-            .Columns("X:X").ColumnWidth = 15
-            .Columns("Y:Y").ColumnWidth = 15
-            .Columns("Z:Z").ColumnWidth = 15
-            .Columns("AA:AA").ColumnWidth = 15
-            .Columns("AB:AB").ColumnWidth = 9
+
         End With
     End Sub
 

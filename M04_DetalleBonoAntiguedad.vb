@@ -517,19 +517,27 @@
                 SMN,
                 fechaIng,
                 fechaPlanilla)
+
         End With
+
     End Sub
     Sub ajusteHojaBA()
+
         With Globals.ThisAddIn.Application
+
             .Columns("A:A").ColumnWidth = 6
             .Columns("M:M").ColumnWidth = 6
             .Columns("D:D").ColumnWidth = 20
             .Columns("H:H").ColumnWidth = 20
             .Columns("I:I").ColumnWidth = 20
+
         End With
+
     End Sub
     Sub contenedorBA()
+
         With Globals.ThisAddIn.Application
+
             With .Selection.Borders(Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeLeft)
                 .LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDouble
                 .ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -554,10 +562,14 @@
                 .TintAndShade = 0
                 .Weight = Microsoft.Office.Core.XlBorderWeight.xlThick
             End With
+
         End With
+
     End Sub
     Sub formatoTablas()
+
         With Globals.ThisAddIn.Application
+
             With .Selection.Borders(Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeLeft)
                 .LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous
                 .ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -594,7 +606,9 @@
                 .TintAndShade = 0
                 .Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlMedium
             End With
+
         End With
+
     End Sub
 
     Sub calculoBA(ByVal filCelInc As Long,
@@ -605,11 +619,11 @@
               ByVal fechaPlanilla As String)
 
         With Globals.ThisAddIn.Application
-            'CALUCULO DE ANTIGUEDAD
 
+            'CALUCULO DE ANTIGUEDAD
             'FECHA DE LA PLANILLA
             With .Range(.Cells(filCelInc, 1).Offset(3, 9), .Cells(filCelInc, 1).Offset(3, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -617,7 +631,7 @@
                             "-IF(TEXT(R[9]C[-2],""m"")<TEXT(R[9]C[-4],""m""),1,0)"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(3, 10), .Cells(filCelInc, 1).Offset(3, 10))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -626,7 +640,7 @@
                                 "+IF(TEXT(R[9]C[-3],""m"")<TEXT(R[9]C[-5],""m""),12,0)"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(3, 11), .Cells(filCelInc, 1).Offset(3, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -659,21 +673,21 @@
 
             'FECHA INGRESO
             With .Range(.Cells(filCelInc, 1).Offset(4, 9), .Cells(filCelInc, 1).Offset(4, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .FormulaR1C1 = "=TEXT(R[8]C[-4],""yyyy"")"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(4, 10), .Cells(filCelInc, 1).Offset(4, 10))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .FormulaR1C1 = "=TEXT(R[8]C[-5],""m"")"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(4, 11), .Cells(filCelInc, 1).Offset(4, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -683,42 +697,42 @@
             ' CALCULO DE BONO DE ANTIGUESDAD
 
             With .Range(.Cells(filCelInc, 1).Offset(12, 2), .Cells(filCelInc, 1).Offset(12, 2))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .Value = CI
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 3), .Cells(filCelInc, 1).Offset(12, 4))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .Value = nombreCompleto
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 5), .Cells(filCelInc, 1).Offset(12, 6))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .Value = fechaIng
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 7), .Cells(filCelInc, 1).Offset(12, 7))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .Value = fechaPlanilla
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 8), .Cells(filCelInc, 1).Offset(12, 8))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .FormulaR1C1 = "=DATEDIF(RC[-3],RC[-1],""Y"")"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 9), .Cells(filCelInc, 1).Offset(12, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -726,23 +740,24 @@
                 .FormulaR1C1 = "=IF(AND(RC[-1]>=R[-9]C[-8],RC[-1]<=R[-9]C[-7]),R[-9]C[-6],IF(AND(RC[-1]>=R[-8]C[-8],RC[-1]<=R[-8]C[-7]),R[-8]C[-6],IF(AND(RC[-1]>=R[-7]C[-8],RC[-1]<=R[-7]C[-7]),R[-7]C[-6],IF(AND(RC[-1]>=R[-6]C[-8],RC[-1]<=R[-6]C[-7]),R[-6]C[-6],IF(AND(RC[-1]>=R[-5]C[-8],RC[-1]<=R[-5]C[-7]),R[-5]C[-6],IF(AND(RC[-1]>=R[-4]C[-8]),R[-4]C[-6],0))))))"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 10), .Cells(filCelInc, 1).Offset(12, 10))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .FormulaR1C1 = "=RC[-1]*R[-8]C[-4]"
                 .NumberFormat = "#,##0.00"
             End With
-            ' SALARIO MINIMO NACIONAL
 
+            ' SALARIO MINIMO NACIONAL
             With .Range(.Cells(filCelInc, 1).Offset(3, 6), .Cells(filCelInc, 1).Offset(3, 6))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .Value = SMN
                 .NumberFormat = "#,##0.00"
             End With
+
         End With
     End Sub
 

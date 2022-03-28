@@ -41,9 +41,11 @@
 
             .Columns("G:G").ColumnWidth = 9
         End With
+
     End Sub
 
     Public Sub contenedor()
+
         With Globals.ThisAddIn.Application
             With .Selection.Borders(Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeLeft)
                 .LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDouble
@@ -70,10 +72,13 @@
                 .Weight = Microsoft.Office.Core.XlBorderWeight.xlThick
             End With
         End With
+
     End Sub
 
     Public Sub calculoANS(ByVal n As Long, ByVal filCelFn As Long, ByVal filCelInc As Long, ByVal totalGanado As String, ByVal nombreCompleto As String, ByVal carnet As String)
+
         With Globals.ThisAddIn.Application
+
             '#######################################################
             '#############    TITULO DE REPORTE
             '#######################################################
@@ -82,7 +87,7 @@
             .Cells(filCelFn, 1).Value = "CONFORME A LEY 065. APORTE NACIONAL SOLIDARIO."
 
             With .Range(.Cells(n, 1), .Cells(n, 13))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Size = 16
                 .Font.Bold = True
@@ -92,7 +97,7 @@
                 .Interior.TintAndShade = -0.249977111117893
             End With
             With .Range(.Cells(filCelFn, 1), .Cells(filCelFn, 13))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -115,11 +120,10 @@
             .Cells(filCelInc, 1).Offset(0, 9).Value = totalGanado
             .Cells(filCelInc, 1).Offset(0, 9).NumberFormat = "#,##0.00"
 
-
             '#############    APORTE SOLIDARIO 1%
 
             With .Range(.Cells(filCelInc, 1).Offset(3, 1), .Cells(filCelInc, 1).Offset(3, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -129,7 +133,7 @@
                 .Value = "APORTE SOLIDARIO (1%)"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(4, 1), .Cells(filCelInc, 1).Offset(4, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -142,7 +146,7 @@
             '#############    APORTE SOLIDARIO 5%
 
             With .Range(.Cells(filCelInc, 1).Offset(16, 1), .Cells(filCelInc, 1).Offset(16, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -152,7 +156,7 @@
                 .Value = "APORTE SOLIDARIO (5%)"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(17, 1), .Cells(filCelInc, 1).Offset(17, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -165,7 +169,7 @@
             '#############    APORTE SOLIDARIOS 10%
 
             With .Range(.Cells(filCelInc, 1).Offset(3, 7), .Cells(filCelInc, 1).Offset(3, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -175,7 +179,7 @@
                 .Value = "APORTE SOLIDARIO (10%)"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(4, 7), .Cells(filCelInc, 1).Offset(4, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -188,7 +192,7 @@
             '#############    TOTAL APORTE NACIONAL SOLIDARIO
 
             With .Range(.Cells(filCelInc, 1).Offset(16, 7), .Cells(filCelInc, 1).Offset(16, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -198,7 +202,7 @@
                 .Value = "TOTAL APORTE SOLIDARIO NACIONAL"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(17, 7), .Cells(filCelInc, 1).Offset(17, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorDark1
@@ -215,7 +219,7 @@
             '#############    APORTE SOLIDARIO 1%
 
             With .Range(.Cells(filCelInc, 1).Offset(6, 1), .Cells(filCelInc, 1).Offset(6, 1))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -225,7 +229,7 @@
                 .Value = "T. GANDADO"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(7, 1), .Cells(filCelInc, 1).Offset(7, 1))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -238,7 +242,7 @@
             '#############    APORTE SOLIDARIO 5%
 
             With .Range(.Cells(filCelInc, 1).Offset(19, 1), .Cells(filCelInc, 1).Offset(19, 1))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -248,7 +252,7 @@
                 .Value = "T. GANDADO"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(20, 1), .Cells(filCelInc, 1).Offset(20, 1))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -260,7 +264,7 @@
 
             '#############    APORTE SOLIDARIO 10%
             With .Range(.Cells(filCelInc, 1).Offset(6, 7), .Cells(filCelInc, 1).Offset(6, 7))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -270,7 +274,7 @@
                 .Value = "T. GANDADO"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(7, 7), .Cells(filCelInc, 1).Offset(7, 7))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -285,7 +289,7 @@
             '#######################################################
 
             With .Range(.Cells(filCelInc, 1).Offset(6, 2), .Cells(filCelInc, 1).Offset(7, 2))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -294,7 +298,7 @@
                 .Value = "-"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(6, 3), .Cells(filCelInc, 1).Offset(7, 3))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -306,7 +310,7 @@
                 .NumberFormat = "#,##0.00"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(6, 4), .Cells(filCelInc, 1).Offset(7, 4))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -315,7 +319,7 @@
                 .Value = "X"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(6, 5), .Cells(filCelInc, 1).Offset(7, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -331,7 +335,7 @@
             '#######################################################
 
             With .Range(.Cells(filCelInc, 1).Offset(19, 2), .Cells(filCelInc, 1).Offset(20, 2))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -340,7 +344,7 @@
                 .Value = "-"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(19, 3), .Cells(filCelInc, 1).Offset(20, 3))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -352,7 +356,7 @@
                 .NumberFormat = "#,##0.00"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(19, 4), .Cells(filCelInc, 1).Offset(20, 4))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -361,7 +365,7 @@
                 .Value = "X"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(19, 5), .Cells(filCelInc, 1).Offset(20, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -376,7 +380,7 @@
             '#######################################################
 
             With .Range(.Cells(filCelInc, 1).Offset(6, 8), .Cells(filCelInc, 1).Offset(7, 8))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -385,7 +389,7 @@
                 .Value = "-"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(6, 9), .Cells(filCelInc, 1).Offset(7, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -397,7 +401,7 @@
                 .NumberFormat = "#,##0.00"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(6, 10), .Cells(filCelInc, 1).Offset(7, 10))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -406,7 +410,7 @@
                 .Value = "X"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(6, 11), .Cells(filCelInc, 1).Offset(7, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -424,7 +428,7 @@
             '#############    APORTE SOLIDARIO 1%
 
             With .Range(.Cells(filCelInc, 1).Offset(9, 1), .Cells(filCelInc, 1).Offset(9, 3))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -434,7 +438,7 @@
                 .Value = "DIFERENCIA"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(10, 1), .Cells(filCelInc, 1).Offset(10, 3))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -444,7 +448,7 @@
                 .FormulaR1C1 = "=R[-3]C-R[-4]C[2]"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(9, 4), .Cells(filCelInc, 1).Offset(10, 4))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -453,7 +457,7 @@
                 .Value = "X"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(9, 5), .Cells(filCelInc, 1).Offset(10, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -467,7 +471,7 @@
             '#############    APORTE SOLIDARIO 5%
 
             With .Range(.Cells(filCelInc, 1).Offset(22, 1), .Cells(filCelInc, 1).Offset(22, 3))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -477,7 +481,7 @@
                 .Value = "DIFERENCIA"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(23, 1), .Cells(filCelInc, 1).Offset(23, 3))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -487,7 +491,7 @@
                 .FormulaR1C1 = "=R[-3]C-R[-4]C[2]"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(22, 4), .Cells(filCelInc, 1).Offset(23, 4))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -496,7 +500,7 @@
                 .Value = "X"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(22, 5), .Cells(filCelInc, 1).Offset(23, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -510,7 +514,7 @@
             '#############    APORTE SOLIDARIO 10%
 
             With .Range(.Cells(filCelInc, 1).Offset(9, 7), .Cells(filCelInc, 1).Offset(9, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -520,7 +524,7 @@
                 .Value = "DIFERENCIA"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(10, 7), .Cells(filCelInc, 1).Offset(10, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -530,7 +534,7 @@
                 .FormulaR1C1 = "=R[-3]C-R[-4]C[2]"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(9, 10), .Cells(filCelInc, 1).Offset(10, 10))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -539,7 +543,7 @@
                 .Value = "X"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(9, 11), .Cells(filCelInc, 1).Offset(10, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -558,7 +562,7 @@
             '#############    APORTE SOLIDARIO 1%
 
             With .Range(.Cells(filCelInc, 1).Offset(12, 1), .Cells(filCelInc, 1).Offset(12, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -568,7 +572,7 @@
                 .Value = "RESULTADO"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(13, 1), .Cells(filCelInc, 1).Offset(13, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -582,7 +586,7 @@
             '#############    APORTE SOLIDARIO 5%
 
             With .Range(.Cells(filCelInc, 1).Offset(25, 1), .Cells(filCelInc, 1).Offset(25, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -592,7 +596,7 @@
                 .Value = "RESULTADO"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(26, 1), .Cells(filCelInc, 1).Offset(26, 5))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -606,7 +610,7 @@
             '#############    APORTE SOLIDARIO 10%
 
             With .Range(.Cells(filCelInc, 1).Offset(12, 7), .Cells(filCelInc, 1).Offset(12, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -616,7 +620,7 @@
                 .Value = "RESULTADO"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(13, 7), .Cells(filCelInc, 1).Offset(13, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -632,7 +636,7 @@
             '#######################################################
             '#############    APORTE SOLIDARIO 1%
             With .Range(.Cells(filCelInc, 1).Offset(19, 7), .Cells(filCelInc, 1).Offset(19, 7))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -642,7 +646,7 @@
                 .Value = "RESULTADO 1"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(20, 7), .Cells(filCelInc, 1).Offset(20, 7))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -653,7 +657,7 @@
                 .NumberFormat = "#,##0.00"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(19, 8), .Cells(filCelInc, 1).Offset(20, 8))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -663,7 +667,7 @@
             End With
             '#############    APORTE SOLIDARIO 5%
             With .Range(.Cells(filCelInc, 1).Offset(19, 9), .Cells(filCelInc, 1).Offset(19, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -673,7 +677,7 @@
                 .Value = "RESULTADO 2"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(20, 9), .Cells(filCelInc, 1).Offset(20, 9))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -684,7 +688,7 @@
                 .NumberFormat = "#,##0.00"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(19, 10), .Cells(filCelInc, 1).Offset(20, 10))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .VerticalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
@@ -694,7 +698,7 @@
             End With
             '#############    APORTE SOLIDARIO 10%
             With .Range(.Cells(filCelInc, 1).Offset(19, 11), .Cells(filCelInc, 1).Offset(19, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -704,7 +708,7 @@
                 .Value = "RESULTADO 3"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(20, 11), .Cells(filCelInc, 1).Offset(20, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -717,7 +721,7 @@
 
             '#############   TOTAL APORTE NACIONAL SOLIDARIO
             With .Range(.Cells(filCelInc, 1).Offset(22, 7), .Cells(filCelInc, 1).Offset(22, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
@@ -727,7 +731,7 @@
                 .Value = "TOTAL A.N.S DEL TRABAJADOR"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(23, 7), .Cells(filCelInc, 1).Offset(23, 11))
-                .Merge
+                .Merge()
                 .HorizontalAlignment = Microsoft.Office.Interop.Excel.Constants.xlCenter
                 .Font.Bold = True
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic

@@ -88,6 +88,7 @@
                 .Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
                 .Value = "HABER BASICO:"
                 .Offset(0, 2).Value = haberBasico
+                .Offset(0, 2).NumberFormat = "#,##0.00"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(1, 6), .Cells(filCelInc, 1).Offset(1, 6))
                 .Merge

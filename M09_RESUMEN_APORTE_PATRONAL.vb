@@ -164,7 +164,7 @@
             .Cells(1, 27).CurrentRegion.Select()
             .Selection.NumberFormat = "#,##0.00"
             formatoTablas()
-            .Columns("AF:AG").Style = "Percent"
+
 
         End With
     End Sub
