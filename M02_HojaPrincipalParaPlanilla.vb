@@ -170,7 +170,7 @@
 
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11).Value = TOTAL_BONO_ANTIGUEDAD
-                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11), Address:="", SubAddress:=vinculoX(hojaBonoAntDetallado))
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 11), Address:="", SubAddress:=vinculoX(hojaBonoAntDetallado, 12))
                 hojaPrePlanilla.Activate()
 
                 '########################################################################
@@ -204,7 +204,7 @@
                 TOTAL_HORAS_EXTR_NOCT = resultadoExtNoc(hojaExtNoctDetallado.Name)
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14).Value = TOTAL_HORAS_EXTR_NOCT
-                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14), Address:="", SubAddress:=vinculoX(hojaExtNoctDetallado))
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 14), Address:="", SubAddress:=vinculoX(hojaExtNoctDetallado, 10))
                 hojaPrePlanilla.Activate()
 
                 '########################################################################
@@ -226,7 +226,7 @@
                 TOTAL_DOMINICAL_DOMIG_TRAB = resultadoDomTrbDom(hojaDomTrabDomDetallado.Name)
                 hojaPrePlanilla.Activate()
                 .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15).Value = TOTAL_DOMINICAL_DOMIG_TRAB
-                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15), Address:="", SubAddress:=vinculoX(hojaDomTrabDomDetallado))
+                .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15).Hyperlinks.Add(Anchor:= .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(0, 15), Address:="", SubAddress:=vinculoX(hojaDomTrabDomDetallado, 10))
                 hojaPrePlanilla.Activate()
 
                 '########################################################################
@@ -390,6 +390,7 @@
             .Cells.EntireColumn.AutoFit()
             .Cells.Font.ColorIndex = Microsoft.Office.Interop.Excel.Constants.xlAutomatic
 
+            .Cells(1, 1).Select()
             With .ActiveWindow
                 .SplitColumn = 0
                 .SplitRow = 1
@@ -532,10 +533,10 @@
         resultadoUb2 = nombreHojaUb & "!" & celdaUb
 
     End Function
-    Public Function vinculoX(ByVal nombreHojaInformeDetallado As Excel.Worksheet) As String
+    Public Function vinculoX(ByVal nombreHojaInformeDetallado As Excel.Worksheet, ByVal nColD As Integer) As String
         With Globals.ThisAddIn.Application
             nombreHojaInformeDetallado.Activate()
-            Return "=" & nombreHojaInformeDetallado.Name & "!" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Address
+            Return "=" & nombreHojaInformeDetallado.Name & "!" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Address & ":" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Offset(0, nColD).Address
         End With
     End Function
 End Module

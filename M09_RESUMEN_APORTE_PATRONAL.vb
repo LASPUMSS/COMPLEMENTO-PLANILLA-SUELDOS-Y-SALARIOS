@@ -37,7 +37,7 @@
             End With
 
             .Cells(5, 6).Value = "APORTES PATRONALES"
-            .Cells(5, 7).Value = "BENEFICIOS SOCIALES"
+            .Cells(5, 11).Value = "BENEFICIOS SOCIALES"
 
             With .Range(.Cells(5, 6), .Cells(5, 10))
                 .Merge()

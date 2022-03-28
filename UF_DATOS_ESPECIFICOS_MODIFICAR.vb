@@ -172,6 +172,7 @@
                     celda.Offset(0, 30).Value = txt_Form110.Text
                     celda.Offset(0, 31).Value = txt_SaldoRcIvaMesAnt.Text
 
+                    .Cells.EntireColumn.AutoFit()
 
                     Exit For
                 End If

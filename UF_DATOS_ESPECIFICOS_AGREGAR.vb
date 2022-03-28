@@ -38,6 +38,8 @@
                 .Cells(.Rows.Count, 32).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_Form110.Text
                 .Cells(.Rows.Count, 33).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Value = txt_SaldoRcIvaMesAnt.Text
 
+                .Cells.EntireColumn.AutoFit()
+
                 UF_DATOS_ESPECIFICOS_AGREGAR.ActiveForm.Close()
 
             Else

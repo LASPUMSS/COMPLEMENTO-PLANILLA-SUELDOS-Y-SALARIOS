@@ -192,7 +192,7 @@
     End Function
     Public Function vinculo(ByVal nombreHojaInformeDetallado As String) As String
         With Globals.ThisAddIn.Application
-            vinculo = "=" & nombreHojaInformeDetallado & "!" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Address
+            Return "=" & nombreHojaInformeDetallado & "!" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Address & ":" & .Cells(.Rows.Count, 1).End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Offset(1, 0).Offset(0, 12).Address
         End With
     End Function
 
