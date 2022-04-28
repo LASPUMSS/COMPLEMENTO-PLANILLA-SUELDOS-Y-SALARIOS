@@ -1,6 +1,6 @@
 ﻿Module M00_FuncionesExtras
     Public Function NumeroDiasMes(ByVal gestionPlanilla As Long, ByVal mesPlanilla As Integer) As Integer
-
+        'ESTA FUNCION DEVUELVE EL NUMERO DE DIAS QUE TIENE UN MES RESPECTO AL MES Y EL AÑO
         Dim i2 As Integer
         Dim diasMesGestionNor(11) As Integer
         Dim diasMesGestionBi(11) As Integer
