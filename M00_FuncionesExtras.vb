@@ -6,7 +6,6 @@
         Dim diasMesGestionBi(11) As Integer
         Dim diasMes As Integer
 
-
         diasMesGestionNor(0) = 31
         diasMesGestionNor(1) = 28
         diasMesGestionNor(2) = 31
