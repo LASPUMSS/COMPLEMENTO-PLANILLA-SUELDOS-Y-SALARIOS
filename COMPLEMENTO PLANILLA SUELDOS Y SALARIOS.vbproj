@@ -204,46 +204,46 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
-    <Compile Include="M00_FuncionesExtras.vb" />
-    <Compile Include="M01_GenerarHojaPrincipalPlanilla.vb" />
-    <Compile Include="M02_HojaPrincipalParaPlanilla.vb" />
-    <Compile Include="M03_DetalleANS.vb" />
-    <Compile Include="M04_DetalleBonoAntiguedad.vb" />
-    <Compile Include="M05_DetalleDominicalDomigTrab.vb" />
-    <Compile Include="M06_DetalleHorasExtraordinarias.vb" />
-    <Compile Include="M07_RESUMEN_AFP.vb" />
-    <Compile Include="M08_RESUMEN_PLN_TRIBUTARIA.vb" />
-    <Compile Include="M09_RESUMEN_APORTE_PATRONAL.vb" />
-    <Compile Include="M10_SumasTotales.vb" />
-    <Compile Include="Ribbon1.vb" />
+    <Compile Include="Modules\M00_FuncionesExtras.vb" />
+    <Compile Include="Modules\M01_GenerarHojaPrincipalPlanilla.vb" />
+    <Compile Include="Modules\M02_HojaPrincipalParaPlanilla.vb" />
+    <Compile Include="Modules\M03_DetalleANS.vb" />
+    <Compile Include="Modules\M04_DetalleBonoAntiguedad.vb" />
+    <Compile Include="Modules\M05_DetalleDominicalDomigTrab.vb" />
+    <Compile Include="Modules\M06_DetalleHorasExtraordinarias.vb" />
+    <Compile Include="Modules\M07_RESUMEN_AFP.vb" />
+    <Compile Include="Modules\M08_RESUMEN_PLN_TRIBUTARIA.vb" />
+    <Compile Include="Modules\M09_RESUMEN_APORTE_PATRONAL.vb" />
+    <Compile Include="Modules\M10_SumasTotales.vb" />
+    <Compile Include="Ribbons\Ribbon1.vb" />
     <Compile Include="ThisAddIn.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UF_DATOS_ESPECIFICOS_AGREGAR.Designer.vb">
+    <Compile Include="Forms\UF_DATOS_ESPECIFICOS_AGREGAR.Designer.vb">
       <DependentUpon>UF_DATOS_ESPECIFICOS_AGREGAR.vb</DependentUpon>
     </Compile>
-    <Compile Include="UF_DATOS_ESPECIFICOS_AGREGAR.vb">
+    <Compile Include="Forms\UF_DATOS_ESPECIFICOS_AGREGAR.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UF_DATOS_ESPECIFICOS_MODIFICAR.Designer.vb">
+    <Compile Include="Forms\UF_DATOS_ESPECIFICOS_MODIFICAR.Designer.vb">
       <DependentUpon>UF_DATOS_ESPECIFICOS_MODIFICAR.vb</DependentUpon>
     </Compile>
-    <Compile Include="UF_DATOS_ESPECIFICOS_MODIFICAR.vb">
+    <Compile Include="Forms\UF_DATOS_ESPECIFICOS_MODIFICAR.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UF_DATOS_GENERALES.Designer.vb">
+    <Compile Include="Forms\UF_DATOS_GENERALES.Designer.vb">
       <DependentUpon>UF_DATOS_GENERALES.vb</DependentUpon>
     </Compile>
-    <Compile Include="UF_DATOS_GENERALES.vb">
+    <Compile Include="Forms\UF_DATOS_GENERALES.vb">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="UF_DATOS_ESPECIFICOS_AGREGAR.resx">
+    <EmbeddedResource Include="Forms\UF_DATOS_ESPECIFICOS_AGREGAR.resx">
       <DependentUpon>UF_DATOS_ESPECIFICOS_AGREGAR.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UF_DATOS_ESPECIFICOS_MODIFICAR.resx">
+    <EmbeddedResource Include="Forms\UF_DATOS_ESPECIFICOS_MODIFICAR.resx">
       <DependentUpon>UF_DATOS_ESPECIFICOS_MODIFICAR.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UF_DATOS_GENERALES.resx">
+    <EmbeddedResource Include="Forms\UF_DATOS_GENERALES.resx">
       <DependentUpon>UF_DATOS_GENERALES.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="COMPLEMENTO PLANILLA SUELDOS Y SALARIOS_TemporaryKey.pfx" />
@@ -276,7 +276,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Ribbon1.xml" />
+    <EmbeddedResource Include="Ribbons\Ribbon1.xml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -310,7 +310,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
         <Host Name="Excel" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" PublishedHash="501F60F3B8BAF1916C7D50AECC5342A51A6B73BE" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="501F60F3B8BAF1916C7D50AECC5342A51A6B73BE" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
