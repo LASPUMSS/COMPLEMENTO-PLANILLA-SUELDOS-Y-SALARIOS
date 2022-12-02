@@ -452,7 +452,9 @@
                 .Interior.ThemeColor = Microsoft.Office.Interop.Excel.XlThemeColor.xlThemeColorAccent5
                 .Interior.TintAndShade = -0.249977111117893
                 .NumberFormat = "#,##0"
-                .FormulaR1C1 = "=NumeroDomMes(" & hojaPrincipalDatos.Name & "!R8C8," & hojaPrincipalDatos.Name & "!R9C8)"
+                .FormulaR1C1 = $"=INT(((({hojaPrincipalDatos.Name}!R10C8 & ""/"" & {hojaPrincipalDatos.Name}!R9C8 & ""/"" & {hojaPrincipalDatos.Name}!R8C8)-
+                                  ((1) & ""/"" & {hojaPrincipalDatos.Name}!R9C8 & ""/"" & {hojaPrincipalDatos.Name}!R8C8)) + 
+                                  WEEKDAY(((1) & ""/"" & {hojaPrincipalDatos.Name}!R9C8 & ""/"" & {hojaPrincipalDatos.Name}!R8C8)-1))/7)"
             End With
             With .Range(.Cells(filCelInc, 1).Offset(12, 9), .Cells(filCelInc, 1).Offset(12, 9))
                 .Merge
