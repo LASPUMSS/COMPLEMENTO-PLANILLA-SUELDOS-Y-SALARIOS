@@ -4,7 +4,7 @@
     End Function
 
     Private Sub ThisAddIn_Startup() Handles Me.Startup
-        ' PERMITIR QUE EL LIBRO SE PUEDA EDITAR
+        'CONFIGURACIONES
         Globals.ThisAddIn.Application.ActiveWorkbook.ChangeFileAccess(Microsoft.Office.Interop.Excel.XlFileAccess.xlReadWrite)
     End Sub
 

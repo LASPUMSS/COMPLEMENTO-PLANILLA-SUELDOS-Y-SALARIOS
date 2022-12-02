@@ -9,6 +9,7 @@
 			<button id="btn_AgregarDatosEspecificos" onAction="btn_AgregarDatosEspecificos" label="Agregar Registro" imageMso="TableListPermissions" size="normal"/>
 			<button id="btn_ModificarDatosEspecificos" onAction="btn_ModificarDatosEspecificos" label="Modificar Registro" imageMso="AddOrRemoveAttendees" size="normal"/>
 			<button id="btn_GenerarPlanillaSueldosSalarios" onAction="btn_GenerarPlanillaSueldosSalarios" label="Generar Planilla" imageMso="RecordsRefreshMenu" size="normal"/>
+			<button id="btn_GenerarDatosEjemplo" onAction="btn_GenerarDatosEjemplo" label="Datos Ejemplo" imageMso="FillDown" size="normal"/>
         </group>
       </tab>
     </tabs>

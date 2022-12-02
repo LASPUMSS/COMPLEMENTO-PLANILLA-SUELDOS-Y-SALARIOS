@@ -28,10 +28,10 @@ Public Class Ribbon1
         Return GetResourceText("COMPLEMENTO_PLANILLA_SUELDOS_Y_SALARIOS.Ribbon1.xml")
     End Function
 
-
     Public Sub btn_GenerarHojaPrincipalDatos(Control As Office.IRibbonControl)
         generarPlantillaHojaPrincipal()
     End Sub
+
     Public Sub btn_AgregarDatosGenerales(Control As Office.IRibbonControl)
         Dim frm As New UF_DATOS_GENERALES
 
@@ -87,6 +87,10 @@ Public Class Ribbon1
                 MsgBox("LA HOJA ACTUAL NO ES LA ADECUADA PARA INTRODUCIR LOS DATOS. GENERE UN HOJA PRINCIPAL PARA EJECUTAR ESTE PROCEDIMIENTO.", MsgBoxStyle.Exclamation)
             End If
         End With
+    End Sub
+
+    Public Sub btn_GenerarDatosEjemplo(Control As Office.IRibbonControl)
+        datosDeEjemploDeSueldos()
     End Sub
 #Region "Devoluciones de llamada de la cinta de opciones"
     'Cree métodos de devolución de llamada aquí. Para obtener más información sobre la adición de métodos de devolución de llamada, visite https://go.microsoft.com/fwlink/?LinkID=271226
